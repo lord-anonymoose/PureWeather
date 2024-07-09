@@ -1,0 +1,38 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Let's go!" : {
+      "comment" : "Let's go button for OnboardingViewController",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поехали!"
+          }
+        }
+      }
+    },
+    "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спасибо за то, что выбрали PureWeather!\n\nМы ценим Ваше время и предоставляем только нужную информацию. Для более детального прогноза просто проведите пальцем!"
+          }
+        }
+      }
+    },
+    "Welcome!" : {
+      "comment" : "Onboarding welcome!",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Привет!"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

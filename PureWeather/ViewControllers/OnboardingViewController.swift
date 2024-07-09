@@ -13,7 +13,7 @@ class OnboardingViewController: UIViewController {
 
     // MARK: - Private
     private lazy var iconImageView: UIImageView = {
-        let image = UIImage(named: "")
+        let image = UIImage(named: "AppIconImage")
         let imageView = UIImageView()
         imageView.image = image
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -22,8 +22,7 @@ class OnboardingViewController: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Welcome!"
-        label.backgroundColor = .green
+        label.text = String(localized: "Welcome!", comment: "Onboarding welcome!")
         label.font = .titleFont
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -33,19 +32,19 @@ class OnboardingViewController: UIViewController {
     
     private lazy var textLabel: UILabel = {
         let label = UILabel()
-        label.text = "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!"
+        label.text = String(localized: "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!")
         label.font = .labelFont
-        label.backgroundColor = .red
         label.numberOfLines = 0
-        label.textAlignment = .center
+        label.textAlignment = .natural
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var nextButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Let's go!", for: .normal)
-        button.backgroundColor = .systemBlue
+        let title = String(localized: "Let's go!", comment: "Let's go button for OnboardingViewController")
+        button.setTitle(title, for: .normal)
+        button.backgroundColor = UIColor(named: "AccentColor")
         button.layer.cornerRadius = 10.0
         button.isUserInteractionEnabled = true
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
@@ -75,50 +74,42 @@ class OnboardingViewController: UIViewController {
     }
     
     private func addSubviews() {
-        //view.addSubview(iconImageView)
-        //view.addSubview(titleLabel)
+        view.addSubview(iconImageView)
+        view.addSubview(titleLabel)
         view.addSubview(nextButton)
-        //view.addSubview(textLabel)
+        view.addSubview(textLabel)
     }
     
     private func setupConstraints() {
         let safeAreaGuide = view.safeAreaLayoutGuide
     
-        /*
         NSLayoutConstraint.activate([
-            iconImageView.centerYAnchor.constraint(equalTo: safeAreaGuide.centerYAnchor, constant: -100),
-            iconImageView.heightAnchor.constraint(equalToConstant: 100),
+            iconImageView.centerYAnchor.constraint(equalTo: safeAreaGuide.centerYAnchor, constant: -250),
+            iconImageView.heightAnchor.constraint(equalToConstant: 150),
             iconImageView.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor),
-            iconImageView.widthAnchor.constraint(equalToConstant: 100)
+            iconImageView.widthAnchor.constraint(equalToConstant: 150)
         ])
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 25),
+            titleLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 50),
             titleLabel.heightAnchor.constraint(equalToConstant: 50),
             titleLabel.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor)
         ])
-        */
         
         NSLayoutConstraint.activate([
-            nextButton.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor),
-            nextButton.centerYAnchor.constraint(equalTo: safeAreaGuide.centerYAnchor),
+            nextButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -25),
             nextButton.heightAnchor.constraint(equalToConstant: 50),
+            nextButton.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor),
             nextButton.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 25),
             nextButton.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -25)
-            //nextButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -25),
-            //nextButton.heightAnchor.constraint(equalToConstant: 50),
-            //nextButton.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 25),
-            //nextButton.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -25)
         ])
-        
-        /*
+    
         NSLayoutConstraint.activate([
             textLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 25),
             textLabel.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -25),
-            textLabel.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 25),
-            textLabel.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -25)
+            textLabel.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 15),
+            textLabel.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -15)
         ])
-        */
     }
 }
 
