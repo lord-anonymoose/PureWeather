@@ -9,19 +9,33 @@
 /* Begin PBXBuildFile section */
 		8E0386232C3D2EC8002BD3C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386222C3D2EC8002BD3C1 /* AppDelegate.swift */; };
 		8E0386252C3D2EC8002BD3C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386242C3D2EC8002BD3C1 /* SceneDelegate.swift */; };
-		8E0386272C3D2EC8002BD3C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386262C3D2EC8002BD3C1 /* ViewController.swift */; };
+		8E0386272C3D2EC8002BD3C1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386262C3D2EC8002BD3C1 /* OnboardingViewController.swift */; };
 		8E03862C2C3D2EC9002BD3C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E03862B2C3D2EC9002BD3C1 /* Assets.xcassets */; };
 		8E03862F2C3D2EC9002BD3C1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8E03862E2C3D2EC9002BD3C1 /* Base */; };
+		8E03863B2C3D3237002BD3C1 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03863A2C3D3237002BD3C1 /* PrivacyViewController.swift */; };
+		8E03863D2C3D3288002BD3C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03863C2C3D3288002BD3C1 /* MainViewController.swift */; };
+		8E03863F2C3D32C1002BD3C1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03863E2C3D32C1002BD3C1 /* SettingsViewController.swift */; };
+		8E0386412C3D35BC002BD3C1 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386402C3D35BC002BD3C1 /* Fonts.swift */; };
+		8E0386432C3D3AB6002BD3C1 /* YandexWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386422C3D3AB6002BD3C1 /* YandexWeatherService.swift */; };
+		8E0386452C3D3AC5002BD3C1 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386442C3D3AC5002BD3C1 /* WeatherKitService.swift */; };
+		8E0386472C3D3C8F002BD3C1 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386462C3D3C8F002BD3C1 /* AppService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8E03861F2C3D2EC8002BD3C1 /* PureWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PureWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E0386222C3D2EC8002BD3C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E0386242C3D2EC8002BD3C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8E0386262C3D2EC8002BD3C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E0386262C3D2EC8002BD3C1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8E03862B2C3D2EC9002BD3C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E03862E2C3D2EC9002BD3C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E0386302C3D2EC9002BD3C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E03863A2C3D3237002BD3C1 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		8E03863C2C3D3288002BD3C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8E03863E2C3D32C1002BD3C1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8E0386402C3D35BC002BD3C1 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		8E0386422C3D3AB6002BD3C1 /* YandexWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexWeatherService.swift; sourceTree = "<group>"; };
+		8E0386442C3D3AC5002BD3C1 /* WeatherKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherKitService.swift; sourceTree = "<group>"; };
+		8E0386462C3D3C8F002BD3C1 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,8 @@
 		8E0386212C3D2EC8002BD3C1 /* PureWeather */ = {
 			isa = PBXGroup;
 			children = (
+				8E0386392C3D31FC002BD3C1 /* Services */,
+				8E0386382C3D31EE002BD3C1 /* Extensions */,
 				8E0386372C3D2FE5002BD3C1 /* ViewControllers */,
 				8E0386362C3D2FD7002BD3C1 /* Delegates */,
 				8E03862B2C3D2EC9002BD3C1 /* Assets.xcassets */,
@@ -75,9 +91,30 @@
 		8E0386372C3D2FE5002BD3C1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E0386262C3D2EC8002BD3C1 /* ViewController.swift */,
+				8E0386262C3D2EC8002BD3C1 /* OnboardingViewController.swift */,
+				8E03863A2C3D3237002BD3C1 /* PrivacyViewController.swift */,
+				8E03863C2C3D3288002BD3C1 /* MainViewController.swift */,
+				8E03863E2C3D32C1002BD3C1 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8E0386382C3D31EE002BD3C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E0386402C3D35BC002BD3C1 /* Fonts.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8E0386392C3D31FC002BD3C1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8E0386422C3D3AB6002BD3C1 /* YandexWeatherService.swift */,
+				8E0386442C3D3AC5002BD3C1 /* WeatherKitService.swift */,
+				8E0386462C3D3C8F002BD3C1 /* AppService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +187,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E0386272C3D2EC8002BD3C1 /* ViewController.swift in Sources */,
+				8E0386412C3D35BC002BD3C1 /* Fonts.swift in Sources */,
+				8E0386272C3D2EC8002BD3C1 /* OnboardingViewController.swift in Sources */,
 				8E0386232C3D2EC8002BD3C1 /* AppDelegate.swift in Sources */,
 				8E0386252C3D2EC8002BD3C1 /* SceneDelegate.swift in Sources */,
+				8E0386452C3D3AC5002BD3C1 /* WeatherKitService.swift in Sources */,
+				8E0386472C3D3C8F002BD3C1 /* AppService.swift in Sources */,
+				8E03863B2C3D3237002BD3C1 /* PrivacyViewController.swift in Sources */,
+				8E03863D2C3D3288002BD3C1 /* MainViewController.swift in Sources */,
+				8E03863F2C3D32C1002BD3C1 /* SettingsViewController.swift in Sources */,
+				8E0386432C3D3AB6002BD3C1 /* YandexWeatherService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
