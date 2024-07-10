@@ -16,9 +16,11 @@
 		8E03863D2C3D3288002BD3C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03863C2C3D3288002BD3C1 /* MainViewController.swift */; };
 		8E03863F2C3D32C1002BD3C1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03863E2C3D32C1002BD3C1 /* SettingsViewController.swift */; };
 		8E0386412C3D35BC002BD3C1 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386402C3D35BC002BD3C1 /* Fonts.swift */; };
-		8E0386432C3D3AB6002BD3C1 /* YandexWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386422C3D3AB6002BD3C1 /* YandexWeatherService.swift */; };
 		8E0386452C3D3AC5002BD3C1 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386442C3D3AC5002BD3C1 /* WeatherKitService.swift */; };
 		8E0386472C3D3C8F002BD3C1 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386462C3D3C8F002BD3C1 /* AppService.swift */; };
+		8EA6052F2C3EA15900FC9EB9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA6052E2C3EA15900FC9EB9 /* Colors.swift */; };
+		8EA605312C3EA52B00FC9EB9 /* GitHubButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA605302C3EA52B00FC9EB9 /* GitHubButton.swift */; };
+		8EA605342C3EAA0600FC9EB9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA605332C3EAA0600FC9EB9 /* AboutViewController.swift */; };
 		8ECB36EB2C3DF128005F713F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8ECB36EA2C3DF128005F713F /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
@@ -34,10 +36,11 @@
 		8E03863C2C3D3288002BD3C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8E03863E2C3D32C1002BD3C1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8E0386402C3D35BC002BD3C1 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		8E0386422C3D3AB6002BD3C1 /* YandexWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexWeatherService.swift; sourceTree = "<group>"; };
 		8E0386442C3D3AC5002BD3C1 /* WeatherKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherKitService.swift; sourceTree = "<group>"; };
 		8E0386462C3D3C8F002BD3C1 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
-		8ECB36E12C3DE81E005F713F /* WeatherKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WeatherKit.framework; path = System/Library/Frameworks/WeatherKit.framework; sourceTree = SDKROOT; };
+		8EA6052E2C3EA15900FC9EB9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		8EA605302C3EA52B00FC9EB9 /* GitHubButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubButton.swift; sourceTree = "<group>"; };
+		8EA605332C3EAA0600FC9EB9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		8ECB36EA2C3DF128005F713F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,7 +60,6 @@
 			children = (
 				8E0386212C3D2EC8002BD3C1 /* PureWeather */,
 				8E0386202C3D2EC8002BD3C1 /* Products */,
-				8ECB36E02C3DE81E005F713F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,10 +74,10 @@
 		8E0386212C3D2EC8002BD3C1 /* PureWeather */ = {
 			isa = PBXGroup;
 			children = (
+				8E0386362C3D2FD7002BD3C1 /* Delegates */,
 				8E0386392C3D31FC002BD3C1 /* Services */,
 				8E0386382C3D31EE002BD3C1 /* Extensions */,
 				8E0386372C3D2FE5002BD3C1 /* ViewControllers */,
-				8E0386362C3D2FD7002BD3C1 /* Delegates */,
 				8E03862B2C3D2EC9002BD3C1 /* Assets.xcassets */,
 				8ECB36EA2C3DF128005F713F /* Localizable.xcstrings */,
 				8E03862D2C3D2EC9002BD3C1 /* LaunchScreen.storyboard */,
@@ -96,10 +98,10 @@
 		8E0386372C3D2FE5002BD3C1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E0386262C3D2EC8002BD3C1 /* OnboardingViewController.swift */,
-				8E03863A2C3D3237002BD3C1 /* PrivacyViewController.swift */,
+				8EA605322C3EA9EB00FC9EB9 /* First App Launch */,
 				8E03863C2C3D3288002BD3C1 /* MainViewController.swift */,
 				8E03863E2C3D32C1002BD3C1 /* SettingsViewController.swift */,
+				8EA605332C3EAA0600FC9EB9 /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -108,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				8E0386402C3D35BC002BD3C1 /* Fonts.swift */,
+				8EA6052E2C3EA15900FC9EB9 /* Colors.swift */,
+				8EA605302C3EA52B00FC9EB9 /* GitHubButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -115,19 +119,19 @@
 		8E0386392C3D31FC002BD3C1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8E0386422C3D3AB6002BD3C1 /* YandexWeatherService.swift */,
 				8E0386442C3D3AC5002BD3C1 /* WeatherKitService.swift */,
 				8E0386462C3D3C8F002BD3C1 /* AppService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		8ECB36E02C3DE81E005F713F /* Frameworks */ = {
+		8EA605322C3EA9EB00FC9EB9 /* First App Launch */ = {
 			isa = PBXGroup;
 			children = (
-				8ECB36E12C3DE81E005F713F /* WeatherKit.framework */,
+				8E0386262C3D2EC8002BD3C1 /* OnboardingViewController.swift */,
+				8E03863A2C3D3237002BD3C1 /* PrivacyViewController.swift */,
 			);
-			name = Frameworks;
+			path = "First App Launch";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,15 +207,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E0386412C3D35BC002BD3C1 /* Fonts.swift in Sources */,
+				8EA6052F2C3EA15900FC9EB9 /* Colors.swift in Sources */,
 				8E0386272C3D2EC8002BD3C1 /* OnboardingViewController.swift in Sources */,
 				8E0386232C3D2EC8002BD3C1 /* AppDelegate.swift in Sources */,
 				8E0386252C3D2EC8002BD3C1 /* SceneDelegate.swift in Sources */,
 				8E0386452C3D3AC5002BD3C1 /* WeatherKitService.swift in Sources */,
+				8EA605342C3EAA0600FC9EB9 /* AboutViewController.swift in Sources */,
 				8E0386472C3D3C8F002BD3C1 /* AppService.swift in Sources */,
 				8E03863B2C3D3237002BD3C1 /* PrivacyViewController.swift in Sources */,
 				8E03863D2C3D3288002BD3C1 /* MainViewController.swift in Sources */,
 				8E03863F2C3D32C1002BD3C1 /* SettingsViewController.swift in Sources */,
-				8E0386432C3D3AB6002BD3C1 /* YandexWeatherService.swift in Sources */,
+				8EA605312C3EA52B00FC9EB9 /* GitHubButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

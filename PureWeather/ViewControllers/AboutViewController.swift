@@ -1,16 +1,16 @@
 //
-//  PrivacyViewController.swift
+//  MainViewController.swift
 //  PureWeather
 //
-//  Created by Philipp Lazarev on 09.07.2024.
+//  Created by Philipp Lazarev on 10.07.2024.
 //
 
 import UIKit
 
-class PrivacyViewController: UIViewController {
+class AboutViewController: UIViewController {
     
-    
-    
+
+
     // MARK: - Private
     
     
@@ -41,3 +41,4 @@ class PrivacyViewController: UIViewController {
         
     }
 }
+

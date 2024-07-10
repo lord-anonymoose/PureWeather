@@ -18,7 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: scene)
         
         let navigationController = UINavigationController()
-        let vic = OnboardingViewController()
+        let vic = PrivacyViewController()
+        
+        print(AppService.shared().isFirstLaunch())
         
         navigationController.pushViewController(vic, animated: true)
             

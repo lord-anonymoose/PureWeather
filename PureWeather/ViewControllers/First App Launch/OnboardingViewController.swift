@@ -22,7 +22,7 @@ class OnboardingViewController: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = String(localized: "Welcome!", comment: "Onboarding welcome!")
+        label.text = String(localized: "Hello!", comment: "Onboarding welcome!")
         label.font = .titleFont
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -30,21 +30,21 @@ class OnboardingViewController: UIViewController {
         return label
     }()
     
-    private lazy var textLabel: UILabel = {
-        let label = UILabel()
-        label.text = String(localized: "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!")
-        label.font = .labelFont
-        label.numberOfLines = 0
-        label.textAlignment = .natural
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private lazy var onboardingTextView: UITextView = {
+        let textView = UITextView()
+        textView.text = String(localized: "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!")
+        textView.font = .labelFont
+        //textView.numberOfLines = 0
+        textView.textAlignment = .natural
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
     }()
     
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         let title = String(localized: "Let's go!", comment: "Let's go button for OnboardingViewController")
         button.setTitle(title, for: .normal)
-        button.backgroundColor = UIColor(named: "AccentColor")
+        button.backgroundColor = .accentColor
         button.layer.cornerRadius = 10.0
         button.isUserInteractionEnabled = true
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
@@ -77,7 +77,7 @@ class OnboardingViewController: UIViewController {
         view.addSubview(iconImageView)
         view.addSubview(titleLabel)
         view.addSubview(nextButton)
-        view.addSubview(textLabel)
+        view.addSubview(onboardingTextView)
     }
     
     private func setupConstraints() {
@@ -105,10 +105,10 @@ class OnboardingViewController: UIViewController {
         ])
     
         NSLayoutConstraint.activate([
-            textLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 25),
-            textLabel.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -25),
-            textLabel.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 15),
-            textLabel.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -15)
+            onboardingTextView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 25),
+            onboardingTextView.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -25),
+            onboardingTextView.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 15),
+            onboardingTextView.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -15)
         ])
     }
 }
