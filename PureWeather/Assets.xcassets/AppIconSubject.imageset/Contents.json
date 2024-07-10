@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "[removal.ai]_a974ede9-8278-4594-898f-3d7ea6eb1f32-appiconios-marketing.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "[removal.ai]_0b07bcc8-605d-4906-b4b9-87f7bd88d64a_AppIcon~ios-marketing.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
