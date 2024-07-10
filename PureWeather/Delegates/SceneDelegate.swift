@@ -17,14 +17,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                             
         let window = UIWindow(windowScene: scene)
         
-        let navigationController = UINavigationController()
-        let vic = PrivacyViewController()
-        
-        print(AppService.shared().isFirstLaunch())
-        
-        navigationController.pushViewController(vic, animated: true)
-            
+        let mainViewController = MainViewController()
+        let navigationController = UINavigationController(rootViewController: mainViewController)
         window.rootViewController = navigationController
+
+        if AppService.shared().isFirstLaunch() {
+            let onboardingViewController = OnboardingViewController()
+            navigationController.pushViewController(onboardingViewController, animated: true)
+            /*
+            let onboardingViewController = OnboardingViewController()
+            let navigationController = UINavigationController(rootViewController: onboardingViewController)
+            window.rootViewController = navigationController
+             */
+        } else {
+            window.rootViewController = navigationController
+        }
+        
         window.makeKeyAndVisible()
         self.window = window
     }

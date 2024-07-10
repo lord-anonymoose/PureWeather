@@ -18,6 +18,9 @@
 		8E0386412C3D35BC002BD3C1 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386402C3D35BC002BD3C1 /* Fonts.swift */; };
 		8E0386452C3D3AC5002BD3C1 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386442C3D3AC5002BD3C1 /* WeatherKitService.swift */; };
 		8E0386472C3D3C8F002BD3C1 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386462C3D3C8F002BD3C1 /* AppService.swift */; };
+		8E04E5BA2C3F011E00664BCD /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E04E5B92C3F011E00664BCD /* Buttons.swift */; };
+		8E04E5BC2C3F05A600664BCD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E04E5BB2C3F05A600664BCD /* Alert.swift */; };
+		8E04E5BF2C3F0AFC00664BCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E04E5BD2C3F0AFC00664BCD /* InfoPlist.strings */; };
 		8EA6052F2C3EA15900FC9EB9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA6052E2C3EA15900FC9EB9 /* Colors.swift */; };
 		8EA605312C3EA52B00FC9EB9 /* GitHubButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA605302C3EA52B00FC9EB9 /* GitHubButton.swift */; };
 		8EA605342C3EAA0600FC9EB9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA605332C3EAA0600FC9EB9 /* AboutViewController.swift */; };
@@ -38,6 +41,10 @@
 		8E0386402C3D35BC002BD3C1 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		8E0386442C3D3AC5002BD3C1 /* WeatherKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherKitService.swift; sourceTree = "<group>"; };
 		8E0386462C3D3C8F002BD3C1 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
+		8E04E5B92C3F011E00664BCD /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		8E04E5BB2C3F05A600664BCD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		8E04E5BE2C3F0AFC00664BCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8E04E5C02C3F0C6400664BCD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8EA6052E2C3EA15900FC9EB9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8EA605302C3EA52B00FC9EB9 /* GitHubButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubButton.swift; sourceTree = "<group>"; };
 		8EA605332C3EAA0600FC9EB9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +87,7 @@
 				8E0386372C3D2FE5002BD3C1 /* ViewControllers */,
 				8E03862B2C3D2EC9002BD3C1 /* Assets.xcassets */,
 				8ECB36EA2C3DF128005F713F /* Localizable.xcstrings */,
+				8E04E5BD2C3F0AFC00664BCD /* InfoPlist.strings */,
 				8E03862D2C3D2EC9002BD3C1 /* LaunchScreen.storyboard */,
 				8E0386302C3D2EC9002BD3C1 /* Info.plist */,
 			);
@@ -110,8 +118,10 @@
 			isa = PBXGroup;
 			children = (
 				8E0386402C3D35BC002BD3C1 /* Fonts.swift */,
+				8E04E5BB2C3F05A600664BCD /* Alert.swift */,
 				8EA6052E2C3EA15900FC9EB9 /* Colors.swift */,
 				8EA605302C3EA52B00FC9EB9 /* GitHubButton.swift */,
+				8E04E5B92C3F011E00664BCD /* Buttons.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E03862C2C3D2EC9002BD3C1 /* Assets.xcassets in Resources */,
+				8E04E5BF2C3F0AFC00664BCD /* InfoPlist.strings in Resources */,
 				8E03862F2C3D2EC9002BD3C1 /* Base in Resources */,
 				8ECB36EB2C3DF128005F713F /* Localizable.xcstrings in Resources */,
 			);
@@ -209,8 +220,10 @@
 				8E0386412C3D35BC002BD3C1 /* Fonts.swift in Sources */,
 				8EA6052F2C3EA15900FC9EB9 /* Colors.swift in Sources */,
 				8E0386272C3D2EC8002BD3C1 /* OnboardingViewController.swift in Sources */,
+				8E04E5BA2C3F011E00664BCD /* Buttons.swift in Sources */,
 				8E0386232C3D2EC8002BD3C1 /* AppDelegate.swift in Sources */,
 				8E0386252C3D2EC8002BD3C1 /* SceneDelegate.swift in Sources */,
+				8E04E5BC2C3F05A600664BCD /* Alert.swift in Sources */,
 				8E0386452C3D3AC5002BD3C1 /* WeatherKitService.swift in Sources */,
 				8EA605342C3EAA0600FC9EB9 /* AboutViewController.swift in Sources */,
 				8E0386472C3D3C8F002BD3C1 /* AppService.swift in Sources */,
@@ -230,6 +243,15 @@
 				8E03862E2C3D2EC9002BD3C1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8E04E5BD2C3F0AFC00664BCD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E04E5BE2C3F0AFC00664BCD /* en */,
+				8E04E5C02C3F0C6400664BCD /* ru */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

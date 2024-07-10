@@ -21,8 +21,13 @@ class AppService {
         if defaults.bool(forKey: "PureWeatherLaunched") {
             return false
         } else {
-            defaults.set(true, forKey: "PureWeatherLaunched")
             return true
         }
-    }    
+    }
+    
+    func setLaunched() {
+        let defaults = UserDefaults.standard
+        
+        defaults.set(true, forKey: "PureWeatherLaunched")
+    }
 }

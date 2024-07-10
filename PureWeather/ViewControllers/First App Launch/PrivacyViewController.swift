@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PrivacyViewController: UIViewController {
     
+    var locationManager: CLLocationManager?
     
     
     // MARK: - Private
@@ -36,6 +38,31 @@ class PrivacyViewController: UIViewController {
         return label
     }()
     
+    private lazy var allowLocationButton: CustomButton = {
+        let button = CustomButton()
+        let text = String(localized: "Allow location access")
+        button.setTitle(text, for: .normal)
+        button.setBackgroundColor(.accentColor, forState: .normal)
+        button.setBackgroundColor(.accentColor.withAlphaComponent(0.3), forState: .highlighted)
+        button.layer.cornerRadius = 10.0
+        button.addTarget(self, action: #selector(allowLocationButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private lazy var declineLocationButton: CustomButton = {
+        let button = CustomButton()
+        let text = String(localized: "Choose location manually")
+        button.setTitle(text, for: .normal)
+        button.setTitleColor(.systemRed, for: .normal)
+        button.setBackgroundColor(.systemFill, forState: .normal)
+        button.setBackgroundColor(.systemFill.withAlphaComponent(0.3), forState: .highlighted)
+        button.layer.cornerRadius = 10.0
+        button.addTarget(self, action: #selector(declineLocationButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     // MARK: -  Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +74,25 @@ class PrivacyViewController: UIViewController {
     
     
     // MARK: - Actions
+    @objc func allowLocationButtonTapped(_ button: UIButton) {
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.requestWhenInUseAuthorization()
+        AppService.shared().setLaunched()
+    }
     
+    @objc func declineLocationButtonTapped(_ button: UIButton) {
+        let alertTitle = String(localized: "Notice", comment: "Alert title when declining location access")
+        let alertDescription = String(localized: "You will not be able to set location automatically. It can be changed later in settings.")
+        let cancelButtonTitle = String(localized: "Cancel")
+        let okButtonTitle = String(localized: "OK")
+        let alert = UIAlertController(title: alertTitle, message: alertDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: cancelButtonTitle, style: .cancel))
+        alert.addAction(UIAlertAction(title: okButtonTitle, style: .default, handler: { [weak self] _ in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }))
+        self.present(alert, animated: true)
+    }
     
     
     // MARK: - Private
@@ -59,6 +104,8 @@ class PrivacyViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(privacyImageView)
         scrollView.addSubview(privacyLabel)
+        scrollView.addSubview(allowLocationButton)
+        scrollView.addSubview(declineLocationButton)
     }
     
     private func setupConstraints() {
@@ -74,16 +121,67 @@ class PrivacyViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            privacyImageView.topAnchor.constraint(equalTo: contentLayoutGuide.topAnchor, constant: 50),
+            privacyImageView.topAnchor.constraint(equalTo: contentLayoutGuide.topAnchor, constant: 25),
             privacyImageView.heightAnchor.constraint(equalToConstant: 100),
             privacyImageView.centerXAnchor.constraint(equalTo: frameLayoutGuide.centerXAnchor),
             privacyImageView.widthAnchor.constraint(equalToConstant: 100)
         ])
         
         NSLayoutConstraint.activate([
-            privacyLabel.topAnchor.constraint(equalTo: privacyImageView.bottomAnchor, constant: 50),
+            privacyLabel.topAnchor.constraint(equalTo: privacyImageView.bottomAnchor, constant: 25),
             privacyLabel.leadingAnchor.constraint(equalTo: frameLayoutGuide.leadingAnchor, constant: 25),
             privacyLabel.trailingAnchor.constraint(equalTo: frameLayoutGuide.trailingAnchor, constant: -25),
-            privacyLabel.bottomAnchor.constraint(equalTo: contentLayoutGuide.bottomAnchor, constant: -50)
         ])
-    }}
+        
+        NSLayoutConstraint.activate([
+            allowLocationButton.topAnchor.constraint(equalTo: privacyLabel.bottomAnchor, constant: 25),
+            allowLocationButton.heightAnchor.constraint(equalToConstant: 50),
+            allowLocationButton.leadingAnchor.constraint(equalTo: frameLayoutGuide.leadingAnchor, constant: 25),
+            allowLocationButton.trailingAnchor.constraint(equalTo: frameLayoutGuide.trailingAnchor, constant: -25),
+        ])
+        
+        NSLayoutConstraint.activate([
+            declineLocationButton.topAnchor.constraint(equalTo: allowLocationButton.bottomAnchor, constant: 15),
+            declineLocationButton.heightAnchor.constraint(equalToConstant: 50),
+            declineLocationButton.leadingAnchor.constraint(equalTo: frameLayoutGuide.leadingAnchor, constant: 25),
+            declineLocationButton.trailingAnchor.constraint(equalTo: frameLayoutGuide.trailingAnchor, constant: -25),
+            declineLocationButton.bottomAnchor.constraint(equalTo: contentLayoutGuide.bottomAnchor, constant: -50)
+        ])
+    }
+}
+
+
+extension PrivacyViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedWhenInUse, .authorizedAlways:
+            print("Location access granted")
+            handleLocationAccessGranted()
+        case .denied, .restricted:
+            print("Location access denied or restricted")
+            handleLocationAccessDenied()
+        case .notDetermined:
+            print("Location access not determined yet")
+        @unknown default:
+            print("Unknown authorization status")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        print("Updated location: \(location)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to get location: \(error)")
+    }
+    
+    private func handleLocationAccessGranted() {
+        locationManager?.startUpdatingLocation()
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    private func handleLocationAccessDenied() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+}

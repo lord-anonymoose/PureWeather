@@ -34,19 +34,18 @@ class OnboardingViewController: UIViewController {
         let textView = UITextView()
         textView.text = String(localized: "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!")
         textView.font = .labelFont
-        //textView.numberOfLines = 0
         textView.textAlignment = .natural
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
     
-    private lazy var nextButton: UIButton = {
-        let button = UIButton()
+    private lazy var nextButton: CustomButton = {
+        let button = CustomButton()
         let title = String(localized: "Let's go!", comment: "Let's go button for OnboardingViewController")
         button.setTitle(title, for: .normal)
-        button.backgroundColor = .accentColor
+        button.setBackgroundColor(.accent, forState: .normal)
+        button.setBackgroundColor(.accent.withAlphaComponent(0.3), forState: .highlighted)
         button.layer.cornerRadius = 10.0
-        button.isUserInteractionEnabled = true
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -55,7 +54,7 @@ class OnboardingViewController: UIViewController {
     // MARK: -  Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.isHidden = true
         setupUI()
         addSubviews()
         setupConstraints()
@@ -64,7 +63,7 @@ class OnboardingViewController: UIViewController {
     
     // MARK: - Actions
     @objc func nextButtonTapped(_ button: UIButton) {
-        print("Button tapped")
+        self.navigationController?.pushViewController(PrivacyViewController(), animated: true)
     }
     
     

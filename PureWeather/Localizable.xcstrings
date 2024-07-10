@@ -1,6 +1,36 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Allow location access" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Предоставить доступ к геопозиции"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отмена"
+          }
+        }
+      }
+    },
+    "Choose location manually" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбирать вручную"
+          }
+        }
+      }
+    },
     "Hello!" : {
       "comment" : "Onboarding welcome!",
       "localizations" : {
@@ -23,12 +53,33 @@
         }
       }
     },
+    "Notice" : {
+      "comment" : "Alert title when declining location access",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Внимание"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ОК"
+          }
+        }
+      }
+    },
     "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Спасибо за то, что выбрали PureWeather!\n\nМы ценим Ваше время и предоставляем только нужную информацию. Для более детального прогноза просто проведите пальцем!"
+            "value" : "Спасибо за то, что выбрали PureWeather!\n\nМы ценим Ваше время и предоставляем только нужную информацию. А для более детального прогноза просто проведите пальцем!"
           }
         }
       }
@@ -38,7 +89,17 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Мы очень дорожим Вашей приватностью! Именно поэтому приложение использует фреймворк WeatherKit от Apple, который обеспечивает максимальную защищенность Ваших данных. Кроме того, приложение PureWeather имеет открытый исходный код, который Вы всегда сможете посмотреть на GitHub. \n\nВаша геопозиция используется только для предоставления данных о погоде. Если Вы не хотите делится своим месторасположением, то в приложении также можно добавлять локации вручную."
+            "value" : "Мы очень дорожим Вашей приватностью! Именно поэтому приложение использует фреймворк WeatherKit от Apple, который обеспечивает максимальную защищенность Ваших данных. Кроме того, приложение PureWeather имеет открытый исходный код, который Вы всегда сможете посмотреть на GitHub. \n\nВаша геопозиция используется только для предоставления данных о погоде. Если Вы не желаете делится своим месторасположением, то в приложении также можно добавлять локации вручную."
+          }
+        }
+      }
+    },
+    "You will not be able to set location automatically. It can be changed later in settings." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автоматическая установка геопозиции будет невозможно. Предоставить доступ к геопозиции можно будет позже в настройках."
           }
         }
       }
