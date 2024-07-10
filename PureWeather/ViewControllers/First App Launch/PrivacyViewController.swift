@@ -84,20 +84,17 @@ class PrivacyViewController: UIViewController {
     @objc func declineLocationButtonTapped(_ button: UIButton) {
         let alertTitle = String(localized: "Notice", comment: "Alert title when declining location access")
         let alertDescription = String(localized: "You will not be able to set location automatically. It can be changed later in settings.")
-        let cancelButtonTitle = String(localized: "Cancel")
-        let okButtonTitle = String(localized: "OK")
-        let alert = UIAlertController(title: alertTitle, message: alertDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: cancelButtonTitle, style: .cancel))
-        alert.addAction(UIAlertAction(title: okButtonTitle, style: .default, handler: { [weak self] _ in
-            self?.navigationController?.popToRootViewController(animated: true)
-        }))
-        self.present(alert, animated: true)
+        self.showAlert(title: alertTitle, description: alertDescription) { action in
+            self.navigationController?.popToRootViewController(animated: false)
+        }
+        AppService.shared().setLaunched()
     }
     
     
     // MARK: - Private
     private func setupUI() {
         view.backgroundColor = .systemBackground
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     private func addSubviews() {

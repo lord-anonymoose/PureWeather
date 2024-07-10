@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "About developer" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "О разработчике"
+          }
+        }
+      }
+    },
     "Allow location access" : {
       "localizations" : {
         "ru" : {
@@ -31,6 +41,26 @@
         }
       }
     },
+    "email copied" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Почта скопирована"
+          }
+        }
+      }
+    },
+    "Error!" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка!"
+          }
+        }
+      }
+    },
     "Hello!" : {
       "comment" : "Onboarding welcome!",
       "localizations" : {
@@ -42,6 +72,16 @@
         }
       }
     },
+    "I am an aspiring iOS Developer. " : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Я - начинающий iOS-разработчик"
+          }
+        }
+      }
+    },
     "Let's go!" : {
       "comment" : "Let's go button for OnboardingViewController",
       "localizations" : {
@@ -49,6 +89,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Поехали!"
+          }
+        }
+      }
+    },
+    "link copied" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ссылка скопирована"
           }
         }
       }
@@ -73,6 +123,9 @@
           }
         }
       }
+    },
+    "PureWeather on GitHub" : {
+
     },
     "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!" : {
       "localizations" : {
@@ -100,6 +153,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Автоматическая установка геопозиции будет невозможно. Предоставить доступ к геопозиции можно будет позже в настройках."
+          }
+        }
+      }
+    },
+    "Your device is not configured to send emails. Try to send it manually." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "На Вашем устройстве не настроена почта. Попробуйте отправить сообщение вручную."
           }
         }
       }

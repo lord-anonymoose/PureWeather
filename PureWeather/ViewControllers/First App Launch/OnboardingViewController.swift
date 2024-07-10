@@ -54,10 +54,16 @@ class OnboardingViewController: UIViewController {
     // MARK: -  Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
+
         setupUI()
         addSubviews()
         setupConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     
@@ -70,6 +76,7 @@ class OnboardingViewController: UIViewController {
     // MARK: - Private
     private func setupUI() {
         view.backgroundColor = .systemBackground
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     private func addSubviews() {
