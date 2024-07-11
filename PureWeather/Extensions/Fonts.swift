@@ -12,6 +12,10 @@ extension UIFont {
         return UIFont.systemFont(ofSize: 50, weight: .bold)
     }
     
+    static var secondaryTitleFont: UIFont {
+        return UIFont.systemFont(ofSize: 30, weight: .bold)
+    }
+    
     static var labelFont: UIFont {
         return UIFont.systemFont(ofSize: 20, weight: .regular)
     }

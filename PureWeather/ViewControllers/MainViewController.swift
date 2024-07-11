@@ -40,7 +40,6 @@ class MainViewController: UIViewController {
     // MARK: - Private
     private func setupUI() {
         view.backgroundColor = .systemCyan
-        //self.navigationController?.navigationBar.isHidden = false
     }
     
     private func addSubviews() {

@@ -16,10 +16,29 @@ class AboutViewController: UIViewController {
     private lazy var philippImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 75
+        imageView.layer.cornerRadius = 50
         imageView.image = UIImage(named: "PhilippImage")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
+    }()
+    
+    private lazy var philippLabel: UILabel = {
+        let label = UILabel()
+        let text = String(localized: "Philipp Lazarev")
+        label.text = text
+        label.font = .secondaryTitleFont
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var philippTextView: UITextView = {
+        let textView = UITextView()
+        textView.text = String(localized: "A 25 years old iOS Developer currently living in Moscow, Russia.\n\nHuge fan of:\n🌎 Travelling and meeting new people\n🍏 Apple products\n⚽️ FC Bayern München\n🎵 Ed Sheeran & OneRepublic\n\nI deeply believe that software and technologies can change this world for the better!")
+        textView.font = .labelFont
+        textView.textAlignment = .natural
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
     }()
     
     private lazy var aboutTextView: UITextView = {
@@ -146,6 +165,8 @@ class AboutViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(philippImageView)
+        view.addSubview(philippLabel)
+        view.addSubview(philippTextView)
         view.addSubview(linkedinButton)
         view.addSubview(githubButton)
         view.addSubview(mailButton)
@@ -157,35 +178,49 @@ class AboutViewController: UIViewController {
         let safeAreaGuide = view.safeAreaLayoutGuide
         
         NSLayoutConstraint.activate([
-            philippImageView.centerYAnchor.constraint(equalTo: safeAreaGuide.centerYAnchor),
+            philippImageView.topAnchor.constraint(equalTo: safeAreaGuide.topAnchor, constant: 25),
             philippImageView.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor),
-            philippImageView.heightAnchor.constraint(equalToConstant: 150),
-            philippImageView.widthAnchor.constraint(equalToConstant: 150),
+            philippImageView.heightAnchor.constraint(equalToConstant: 100),
+            philippImageView.widthAnchor.constraint(equalToConstant: 100),
         ])
         
         NSLayoutConstraint.activate([
-            linkedinButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -125),
+            philippLabel.topAnchor.constraint(equalTo: philippImageView.bottomAnchor, constant: 15),
+            philippLabel.heightAnchor.constraint(equalToConstant: 50),
+            philippLabel.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 25),
+            philippLabel.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -25)
+        ])
+        
+        NSLayoutConstraint.activate([
+            philippTextView.topAnchor.constraint(equalTo: philippLabel.bottomAnchor, constant: 15),
+            philippTextView.bottomAnchor.constraint(equalTo: linkedinButton.topAnchor, constant: -25),
+            philippTextView.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 25),
+            philippTextView.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -25)
+        ])
+        
+        NSLayoutConstraint.activate([
+            linkedinButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -100),
             linkedinButton.heightAnchor.constraint(equalToConstant: 50),
             linkedinButton.widthAnchor.constraint(equalToConstant: 50),
             linkedinButton.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            githubButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -125),
+            githubButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -100),
             githubButton.heightAnchor.constraint(equalToConstant: 50),
             githubButton.widthAnchor.constraint(equalToConstant: 50),
             githubButton.trailingAnchor.constraint(equalTo: linkedinButton.leadingAnchor, constant: -25)
         ])
         
         NSLayoutConstraint.activate([
-            mailButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -125),
+            mailButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -100),
             mailButton.heightAnchor.constraint(equalToConstant: 50),
             mailButton.widthAnchor.constraint(equalToConstant: 50),
             mailButton.leadingAnchor.constraint(equalTo: linkedinButton.trailingAnchor, constant: 25)
         ])
         
         NSLayoutConstraint.activate([
-            projectrepoButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -75),
+            projectrepoButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -50),
             projectrepoButton.heightAnchor.constraint(equalToConstant: 50),
             projectrepoButton.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor),
             projectrepoButton.widthAnchor.constraint(equalToConstant: 200)

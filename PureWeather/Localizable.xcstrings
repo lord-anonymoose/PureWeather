@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "A 25 years old iOS Developer currently living in Moscow, Russia.\n\nHuge fan of:\n🌎 Travelling and meeting new people\n🍏 Apple products\n⚽️ FC Bayern München\n🎵 Ed Sheeran & OneRepublic\n\nI deeply believe that software and technologies can change this world for the better!" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мне 25 и я iOS-разработчик из Москвы.\n\nБольшой фанат:\n🌍 Путешествий и знакомств с новыми людьми\n🍏 Продуктов Apple\n⚽️ Баварии Мюнхен\n🎵 Эда Ширана и OneRepublic\n\nА ещё я искренне верю, что технологии могут изменить этот мир к лучшему!"
+          }
+        }
+      }
+    },
     "About developer" : {
       "localizations" : {
         "ru" : {
@@ -124,8 +134,25 @@
         }
       }
     },
+    "Philipp Lazarev" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Филипп Лазарев"
+          }
+        }
+      }
+    },
     "PureWeather on GitHub" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PureWeather на GitHub"
+          }
+        }
+      }
     },
     "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!" : {
       "localizations" : {
