@@ -24,11 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if AppService.shared().isFirstLaunch() {
             let onboardingViewController = OnboardingViewController()
             navigationController.pushViewController(onboardingViewController, animated: true)
-            /*
-            let onboardingViewController = OnboardingViewController()
-            let navigationController = UINavigationController(rootViewController: onboardingViewController)
-            window.rootViewController = navigationController
-             */
         } else {
             window.rootViewController = navigationController
         }

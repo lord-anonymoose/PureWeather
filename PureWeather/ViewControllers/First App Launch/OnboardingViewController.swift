@@ -35,6 +35,7 @@ class OnboardingViewController: UIViewController {
         textView.text = String(localized: "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!")
         textView.font = .labelFont
         textView.textAlignment = .natural
+        textView.isEditable = false
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -50,6 +51,8 @@ class OnboardingViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    
     
     // MARK: -  Lifecycle
     override func viewDidLoad() {
@@ -67,10 +70,12 @@ class OnboardingViewController: UIViewController {
     }
     
     
+    
     // MARK: - Actions
     @objc func nextButtonTapped(_ button: UIButton) {
         self.navigationController?.pushViewController(PrivacyViewController(), animated: true)
     }
+    
     
     
     // MARK: - Private

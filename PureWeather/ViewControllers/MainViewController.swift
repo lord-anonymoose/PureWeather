@@ -32,14 +32,14 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @objc func informationButtonTapped(_ button: UIButton) {
-        let aboutViewController = AboutViewController()
-        self.navigationController?.pushViewController(aboutViewController, animated: true)
+    @objc func settingsButtonTapped(_ button: UIButton) {
+        let settingsViewController = SettingsViewController()
+        self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
     // MARK: - Private
     private func setupUI() {
-        view.backgroundColor = .systemCyan
+        view.backgroundColor = .systemBackground
     }
     
     private func addSubviews() {
@@ -51,13 +51,9 @@ class MainViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        
-        let informationImage = UIImage(systemName: "info.circle.fill")
-        let informationButton = UIBarButtonItem(image: informationImage, style: .plain, target: self, action: #selector(informationButtonTapped))
-        
-
-        
-        navigationItem.leftBarButtonItem = informationButton
+        let settingsImage = UIImage(systemName: "gear")
+        let settingsButton = UIBarButtonItem(image: settingsImage, style: .plain, target: self, action: #selector(settingsButtonTapped))
+        navigationItem.rightBarButtonItem = settingsButton
     }
 }
 

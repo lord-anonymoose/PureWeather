@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "12h" : {
+
+    },
+    "24h" : {
+
+    },
     "A 25 years old iOS Developer currently living in Moscow, Russia.\n\nHuge fan of:\n🌎 Travelling and meeting new people\n🍏 Apple products\n⚽️ FC Bayern München\n🎵 Ed Sheeran & OneRepublic\n\nI deeply believe that software and technologies can change this world for the better!" : {
       "localizations" : {
         "ru" : {
@@ -71,6 +77,9 @@
         }
       }
     },
+    "F" : {
+
+    },
     "Hello!" : {
       "comment" : "Onboarding welcome!",
       "localizations" : {
@@ -83,6 +92,7 @@
       }
     },
     "I am an aspiring iOS Developer. " : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -113,6 +123,12 @@
         }
       }
     },
+    "m/s" : {
+
+    },
+    "mi/s" : {
+
+    },
     "Notice" : {
       "comment" : "Alert title when declining location access",
       "localizations" : {
@@ -124,6 +140,12 @@
         }
       }
     },
+    "Notifications" : {
+
+    },
+    "Off" : {
+
+    },
     "OK" : {
       "localizations" : {
         "ru" : {
@@ -133,6 +155,9 @@
           }
         }
       }
+    },
+    "On" : {
+
     },
     "Philipp Lazarev" : {
       "localizations" : {
@@ -154,6 +179,12 @@
         }
       }
     },
+    "Settings" : {
+
+    },
+    "Temperature" : {
+
+    },
     "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!" : {
       "localizations" : {
         "ru" : {
@@ -164,6 +195,9 @@
         }
       }
     },
+    "Time Format" : {
+
+    },
     "We truly care about your privacy! That is why our app is built using Apple WeatherKit framework - which never stoles or sells your data. Moreover, PureWeather app is open-source and you can always find its source code on GitHub.\n\nYour location is used to provide you weather data. If you do not want to share your location, you can add cities manually." : {
       "localizations" : {
         "ru" : {
@@ -173,6 +207,9 @@
           }
         }
       }
+    },
+    "Wind Speed" : {
+
     },
     "You will not be able to set location automatically. It can be changed later in settings." : {
       "localizations" : {
@@ -193,6 +230,9 @@
           }
         }
       }
+    },
+    "С" : {
+
     }
   },
   "version" : "1.0"

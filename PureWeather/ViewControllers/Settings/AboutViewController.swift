@@ -12,10 +12,14 @@ import MessageUI
 
 class AboutViewController: UIViewController {
     
+    
+    
     private var philippImageViewTopConstraint: NSLayoutConstraint!
     private var philippImageViewCenterXConstraint: NSLayoutConstraint!
     private var philippImageViewWidthConstraint: NSLayoutConstraint!
     private var philippImageViewHeightConstraint: NSLayoutConstraint!
+    
+    
     
     // MARK: - Private
     private lazy var philippImageView: UIImageView = {
@@ -66,14 +70,7 @@ class AboutViewController: UIViewController {
         textView.text = String(localized: "A 25 years old iOS Developer currently living in Moscow, Russia.\n\nHuge fan of:\n🌎 Travelling and meeting new people\n🍏 Apple products\n⚽️ FC Bayern München\n🎵 Ed Sheeran & OneRepublic\n\nI deeply believe that software and technologies can change this world for the better!")
         textView.font = .labelFont
         textView.textAlignment = .natural
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        return textView
-    }()
-    
-    private lazy var aboutTextView: UITextView = {
-        let textView = UITextView()
-        let text = String(localized: "I am an aspiring iOS Developer. ")
-        textView.text = text
+        textView.isEditable = false
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -128,6 +125,7 @@ class AboutViewController: UIViewController {
     }()
     
     private var copiedLabelBottomConstraint: NSLayoutConstraint!
+    
     
     
     // MARK: -  Lifecycle
@@ -191,6 +189,8 @@ class AboutViewController: UIViewController {
             showCopiedLabel(subject: .link, text: string)
         }
     }
+    
+    
     
     // MARK: - Private
     private func setupUI() {
@@ -343,7 +343,6 @@ class AboutViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.view.layoutIfNeeded()
         }) { _ in
-            // Optional: Perform any completion tasks here
         }
     }
     

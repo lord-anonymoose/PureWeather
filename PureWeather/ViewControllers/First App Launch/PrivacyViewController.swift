@@ -10,7 +10,10 @@ import CoreLocation
 
 class PrivacyViewController: UIViewController {
     
+    
+    
     var locationManager: CLLocationManager?
+    
     
     
     // MARK: - Private
@@ -63,6 +66,8 @@ class PrivacyViewController: UIViewController {
         return button
     }()
     
+    
+    
     // MARK: -  Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +76,7 @@ class PrivacyViewController: UIViewController {
         addSubviews()
         setupConstraints()
     }
+    
     
     
     // MARK: - Actions
@@ -89,6 +95,7 @@ class PrivacyViewController: UIViewController {
         }
         AppService.shared().setLaunched()
     }
+    
     
     
     // MARK: - Private
@@ -175,10 +182,10 @@ extension PrivacyViewController: CLLocationManagerDelegate {
     
     private func handleLocationAccessGranted() {
         locationManager?.startUpdatingLocation()
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: false)
     }
     
     private func handleLocationAccessDenied() {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: false)
     }
 }

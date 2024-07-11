@@ -23,6 +23,7 @@
 		8E04E5BF2C3F0AFC00664BCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E04E5BD2C3F0AFC00664BCD /* InfoPlist.strings */; };
 		8EA6052F2C3EA15900FC9EB9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA6052E2C3EA15900FC9EB9 /* Colors.swift */; };
 		8EA605342C3EAA0600FC9EB9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA605332C3EAA0600FC9EB9 /* AboutViewController.swift */; };
+		8EBEE00E2C408C4B007979F9 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBEE00D2C408C4B007979F9 /* SettingsTableViewCell.swift */; };
 		8ECB36EB2C3DF128005F713F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8ECB36EA2C3DF128005F713F /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		8E04E5C02C3F0C6400664BCD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8EA6052E2C3EA15900FC9EB9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8EA605332C3EAA0600FC9EB9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		8EBEE00D2C408C4B007979F9 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		8ECB36EA2C3DF128005F713F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,10 +106,9 @@
 		8E0386372C3D2FE5002BD3C1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8EA605322C3EA9EB00FC9EB9 /* First App Launch */,
 				8E03863C2C3D3288002BD3C1 /* MainViewController.swift */,
-				8E03863E2C3D32C1002BD3C1 /* SettingsViewController.swift */,
-				8EA605332C3EAA0600FC9EB9 /* AboutViewController.swift */,
+				8EBEE00C2C408869007979F9 /* Settings */,
+				8EA605322C3EA9EB00FC9EB9 /* First App Launch */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -139,6 +140,16 @@
 				8E03863A2C3D3237002BD3C1 /* PrivacyViewController.swift */,
 			);
 			path = "First App Launch";
+			sourceTree = "<group>";
+		};
+		8EBEE00C2C408869007979F9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8E03863E2C3D32C1002BD3C1 /* SettingsViewController.swift */,
+				8EBEE00D2C408C4B007979F9 /* SettingsTableViewCell.swift */,
+				8EA605332C3EAA0600FC9EB9 /* AboutViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 			files = (
 				8E0386412C3D35BC002BD3C1 /* Fonts.swift in Sources */,
 				8EA6052F2C3EA15900FC9EB9 /* Colors.swift in Sources */,
+				8EBEE00E2C408C4B007979F9 /* SettingsTableViewCell.swift in Sources */,
 				8E0386272C3D2EC8002BD3C1 /* OnboardingViewController.swift in Sources */,
 				8E04E5BA2C3F011E00664BCD /* Buttons.swift in Sources */,
 				8E0386232C3D2EC8002BD3C1 /* AppDelegate.swift in Sources */,
