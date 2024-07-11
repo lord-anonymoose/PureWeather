@@ -12,14 +12,43 @@ import MessageUI
 
 class AboutViewController: UIViewController {
     
+    private var philippImageViewTopConstraint: NSLayoutConstraint!
+    private var philippImageViewCenterXConstraint: NSLayoutConstraint!
+    private var philippImageViewWidthConstraint: NSLayoutConstraint!
+    private var philippImageViewHeightConstraint: NSLayoutConstraint!
+    
     // MARK: - Private
     private lazy var philippImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 50
         imageView.image = UIImage(named: "PhilippImage")
+        let imageTap = UITapGestureRecognizer(
+            target: self,
+            action: #selector(philippImageTapped)
+        )
+        imageView.addGestureRecognizer(imageTap)
+        imageView.isUserInteractionEnabled = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
+    }()
+    
+    private lazy var blurView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemBackground
+        view.alpha = 0.0
+        return view
+    }()
+    
+    private lazy var closeImageButton: UIButton = {
+        let button = UIButton()
+        let config = UIImage.SymbolConfiguration(textStyle: .title1)
+        let informationImage = UIImage(systemName: "xmark.circle.fill", withConfiguration: config)?.withTintColor(.accentColor, renderingMode: .alwaysOriginal)
+        button.setImage(informationImage, for: .normal)
+        button.addTarget(self, action: #selector(closeImageButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     private lazy var philippLabel: UILabel = {
@@ -112,6 +141,14 @@ class AboutViewController: UIViewController {
     
     
     // MARK: - Actions
+    @objc func philippImageTapped(_ imageView: UIImageView) {
+        imageAppears()
+    }
+    
+    @objc func closeImageButtonTapped(_ button: UIButton) {
+        imageDisappears()
+    }
+    
     @objc func linkedinButtonTapped(_ button: UIButton) {
         let string = "https://www.linkedin.com/in/philipp-lazarev-782b14167/"
         guard let url = URL(string: string) else {
@@ -165,6 +202,7 @@ class AboutViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(philippImageView)
+        view.addSubview(blurView)
         view.addSubview(philippLabel)
         view.addSubview(philippTextView)
         view.addSubview(linkedinButton)
@@ -178,14 +216,26 @@ class AboutViewController: UIViewController {
         let safeAreaGuide = view.safeAreaLayoutGuide
         
         NSLayoutConstraint.activate([
-            philippImageView.topAnchor.constraint(equalTo: safeAreaGuide.topAnchor, constant: 25),
-            philippImageView.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor),
-            philippImageView.heightAnchor.constraint(equalToConstant: 100),
-            philippImageView.widthAnchor.constraint(equalToConstant: 100),
+            blurView.topAnchor.constraint(equalTo: safeAreaGuide.topAnchor),
+            blurView.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor),
+            blurView.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor),
+            blurView.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor)
         ])
         
+        philippImageViewTopConstraint = philippImageView.topAnchor.constraint(equalTo: safeAreaGuide.topAnchor, constant: 25)
+        philippImageViewCenterXConstraint = philippImageView.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor)
+        philippImageViewWidthConstraint = philippImageView.widthAnchor.constraint(equalToConstant: 100)
+        philippImageViewHeightConstraint = philippImageView.heightAnchor.constraint(equalToConstant: 100)
+        
         NSLayoutConstraint.activate([
-            philippLabel.topAnchor.constraint(equalTo: philippImageView.bottomAnchor, constant: 15),
+            philippImageViewTopConstraint,
+            philippImageViewCenterXConstraint,
+            philippImageViewWidthConstraint,
+            philippImageViewHeightConstraint,
+        ])
+                
+        NSLayoutConstraint.activate([
+            philippLabel.topAnchor.constraint(equalTo: safeAreaGuide.topAnchor, constant: 125),
             philippLabel.heightAnchor.constraint(equalToConstant: 50),
             philippLabel.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 25),
             philippLabel.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -25)
@@ -236,6 +286,65 @@ class AboutViewController: UIViewController {
             copiedLabel.widthAnchor.constraint(equalToConstant: 200)
         ])
         
+    }
+    
+    private func imageAppears() {
+        self.blurView.alpha = 0.8
+        self.blurView.isHidden = false
+        let newWidth = view.frame.width
+        philippImageViewWidthConstraint.constant = newWidth
+        philippImageViewHeightConstraint.constant = newWidth
+        philippImageViewTopConstraint.constant = (view.safeAreaLayoutGuide.layoutFrame.height - newWidth) / 2
+        philippImageView.layer.cornerRadius = 0.0
+        
+        philippImageView.addSubview(closeImageButton)
+        
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+            self.view.bringSubviewToFront(self.blurView)
+            self.view.bringSubviewToFront(self.philippImageView)
+            
+            self.philippImageView.addSubview(self.closeImageButton)
+
+            NSLayoutConstraint.activate([
+                self.closeImageButton.topAnchor.constraint(equalTo: self.philippImageView.topAnchor, constant: 15),
+                self.closeImageButton.heightAnchor.constraint(equalToConstant: 25),
+                self.closeImageButton.trailingAnchor.constraint(equalTo: self.philippImageView.trailingAnchor, constant: -15),
+                self.closeImageButton.widthAnchor.constraint(equalToConstant: 25)
+           ])
+        }
+    }
+    
+    private func imageDisappears() {
+        self.blurView.alpha = 0.0
+        self.blurView.isHidden = true
+
+        philippImageViewTopConstraint.isActive = false
+        philippImageViewWidthConstraint.isActive = false
+        philippImageViewHeightConstraint.isActive = false
+
+        philippImageView.layer.cornerRadius = 50
+
+        let safeAreaGuide = view.safeAreaLayoutGuide
+
+        philippImageViewTopConstraint = philippImageView.topAnchor.constraint(equalTo: safeAreaGuide.topAnchor, constant: 25)
+        philippImageViewWidthConstraint = philippImageView.widthAnchor.constraint(equalToConstant: 100)
+        philippImageViewHeightConstraint = philippImageView.heightAnchor.constraint(equalToConstant: 100)
+
+        NSLayoutConstraint.activate([
+            philippImageViewTopConstraint,
+            philippImageViewCenterXConstraint,
+            philippImageViewWidthConstraint,
+            philippImageViewHeightConstraint,
+        ])
+
+        self.closeImageButton.removeFromSuperview()
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.layoutIfNeeded()
+        }) { _ in
+            // Optional: Perform any completion tasks here
+        }
     }
     
     enum Subject: String {
