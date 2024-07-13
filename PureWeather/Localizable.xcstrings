@@ -2,10 +2,24 @@
   "sourceLanguage" : "en",
   "strings" : {
     "12h" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "12ч"
+          }
+        }
+      }
     },
     "24h" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "24ч"
+          }
+        }
+      }
     },
     "A 25 years old iOS Developer currently living in Moscow, Russia.\n\nHuge fan of:\n🌎 Travelling and meeting new people\n🍏 Apple products\n⚽️ FC Bayern München\n🎵 Ed Sheeran & OneRepublic\n\nI deeply believe that software and technologies can change this world for the better!" : {
       "localizations" : {
@@ -18,6 +32,16 @@
       }
     },
     "About developer" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "О разработчике"
+          }
+        }
+      }
+    },
+    "About Developer" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -77,9 +101,6 @@
         }
       }
     },
-    "F" : {
-
-    },
     "Hello!" : {
       "comment" : "Onboarding welcome!",
       "localizations" : {
@@ -87,17 +108,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Привет!"
-          }
-        }
-      }
-    },
-    "I am an aspiring iOS Developer. " : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Я - начинающий iOS-разработчик"
           }
         }
       }
@@ -124,10 +134,24 @@
       }
     },
     "m/s" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "м/с"
+          }
+        }
+      }
     },
     "mi/s" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ми/с"
+          }
+        }
+      }
     },
     "Notice" : {
       "comment" : "Alert title when declining location access",
@@ -141,10 +165,24 @@
       }
     },
     "Notifications" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уведомления"
+          }
+        }
+      }
     },
     "Off" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выкл"
+          }
+        }
+      }
     },
     "OK" : {
       "localizations" : {
@@ -157,7 +195,14 @@
       }
     },
     "On" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вкл"
+          }
+        }
+      }
     },
     "Philipp Lazarev" : {
       "localizations" : {
@@ -180,10 +225,24 @@
       }
     },
     "Settings" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Настройки"
+          }
+        }
+      }
     },
     "Temperature" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Температура"
+          }
+        }
+      }
     },
     "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!" : {
       "localizations" : {
@@ -196,7 +255,14 @@
       }
     },
     "Time Format" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Формат времени"
+          }
+        }
+      }
     },
     "We truly care about your privacy! That is why our app is built using Apple WeatherKit framework - which never stoles or sells your data. Moreover, PureWeather app is open-source and you can always find its source code on GitHub.\n\nYour location is used to provide you weather data. If you do not want to share your location, you can add cities manually." : {
       "localizations" : {
@@ -209,7 +275,14 @@
       }
     },
     "Wind Speed" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скорость ветра"
+          }
+        }
+      }
     },
     "You will not be able to set location automatically. It can be changed later in settings." : {
       "localizations" : {
@@ -230,9 +303,6 @@
           }
         }
       }
-    },
-    "С" : {
-
     }
   },
   "version" : "1.0"

@@ -14,9 +14,28 @@ class SettingsViewController: UIViewController {
     // MARK: - Private
     private lazy var settingsTableView: UITableView = {
         let tableView = UITableView()
+        tableView.isUserInteractionEnabled = true
+        tableView.isScrollEnabled = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    private lazy var aboutDeveloperButton: UIButton = {
+        let button = UIButton()
+        let title = String(localized: "About Developer")
+        let attributedTitle = NSAttributedString(
+            string: title,
+            attributes: [
+                .foregroundColor: UIColor.secondaryLabel,
+                .underlineStyle: NSUnderlineStyle.single.rawValue
+            ]
+        )        
+        button.setAttributedTitle(attributedTitle, for: .normal)
+        button.addTarget(self, action: #selector(aboutDeveloperButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     
     
     // MARK: -  Lifecycle
@@ -33,12 +52,20 @@ class SettingsViewController: UIViewController {
     
     
     // MARK: - Actions
-    
+    @objc func aboutDeveloperButtonTapped(_ button: UIButton) {
+        let aboutViewController = AboutViewController()
+        self.navigationController?.pushViewController(aboutViewController, animated: true)
+    }
     
     
     // MARK: - Private
     private func setupUI() {
         view.backgroundColor = .systemBackground
+        
+        print("isFahrenheit: \(AppService.shared().isFahrenheit())")
+        print("is12hFormat: \(AppService.shared().is12hFormat())")
+        print("isAmericanSystem: \(AppService.shared().isAmericanSystem())")
+        print("isFirstLaunch: \(AppService.shared().isFirstLaunch())")
     }
     
     private func setupNavigationBar() {
@@ -48,15 +75,22 @@ class SettingsViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(settingsTableView)
+        view.addSubview(aboutDeveloperButton)
     }
     
     private func setupConstraints() {
         let safeAreaGuide = view.safeAreaLayoutGuide
+
         NSLayoutConstraint.activate([
             settingsTableView.topAnchor.constraint(equalTo: safeAreaGuide.topAnchor),
-            settingsTableView.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor),
+            settingsTableView.heightAnchor.constraint(equalToConstant: 300),
             settingsTableView.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor),
             settingsTableView.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor)
+        ])
+        NSLayoutConstraint.activate([
+            aboutDeveloperButton.topAnchor.constraint(equalTo: settingsTableView.bottomAnchor, constant: 15),
+            aboutDeveloperButton.heightAnchor.constraint(equalToConstant: 25),
+            aboutDeveloperButton.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor),
         ])
     }
 }
@@ -86,7 +120,6 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             break
         }
-        
         return cell
     }
     
