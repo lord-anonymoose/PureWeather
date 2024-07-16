@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import WeatherKit
+import CoreLocation
 
 class MainViewController: UIViewController {
     
 
 
-    // MARK: - Private
+    // MARK: - Subviews
     
     
     // MARK: -  Lifecycle
@@ -22,6 +24,10 @@ class MainViewController: UIViewController {
         addSubviews()
         setupConstraints()
         setupNavigationBar()
+        
+        Task {
+            await PureWeatherService.shared().getWeather()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,5 +61,6 @@ class MainViewController: UIViewController {
         let settingsButton = UIBarButtonItem(image: settingsImage, style: .plain, target: self, action: #selector(settingsButtonTapped))
         navigationItem.rightBarButtonItem = settingsButton
     }
+    
 }
 
