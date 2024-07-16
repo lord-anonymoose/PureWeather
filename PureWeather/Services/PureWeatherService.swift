@@ -11,29 +11,23 @@ import WeatherKit
 import CoreLocation
 
 
-class PureWeatherService {
+final class PureWeatherService {
     private init() {}
     
     static func shared() -> PureWeatherService {
         return PureWeatherService()
     }
     
-    func updateWeather() async {
-        
-    }
-    
-    func getWeather() async {
+    func getWeather() async -> Weather? {
         let syracuse = CLLocation(latitude: 43, longitude: -76)
         
         do {
             let weatherService = WeatherService()
             let weather = try await weatherService.weather(for: syracuse)
-            print(type(of: weather))
-            print(weather.dailyForecast)
-            // Handle the weather data here
+            return weather
         } catch {
-            // Handle the error here
             print("Failed to get weather: \(error)")
+            return nil
         }
     }
 }

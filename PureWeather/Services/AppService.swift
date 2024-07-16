@@ -8,9 +8,13 @@
 import Foundation
 
 
-class AppService {
+final class AppService {
     private init() {}
     
+    static func shared() -> AppService {
+        return AppService()
+    }
+
     let defaults = UserDefaults.standard
     
     enum appSetting {
@@ -44,10 +48,6 @@ class AppService {
                 return [String(localized: "On"), String(localized: "Off")]
             }
         }
-    }
-
-    static func shared() -> AppService {
-        return AppService()
     }
     
     // Is the app launched for the first time

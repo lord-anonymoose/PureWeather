@@ -61,6 +61,46 @@
         }
       }
     },
+    "Blizzard" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Метель"
+          }
+        }
+      }
+    },
+    "Blowing Dust" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пыльная буря"
+          }
+        }
+      }
+    },
+    "Blowing Snow" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пурга"
+          }
+        }
+      }
+    },
+    "Breezy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Легкий ветер"
+          }
+        }
+      }
+    },
     "Cancel" : {
       "localizations" : {
         "ru" : {
@@ -77,6 +117,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Выбирать вручную"
+          }
+        }
+      }
+    },
+    "Clear" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ясно"
+          }
+        }
+      }
+    },
+    "Cloudy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Облачно"
+          }
+        }
+      }
+    },
+    "Drizzle" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мелкий дождь"
           }
         }
       }
@@ -101,6 +171,96 @@
         }
       }
     },
+    "Flurries" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кратковременные снегопады"
+          }
+        }
+      }
+    },
+    "Foggy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Туман"
+          }
+        }
+      }
+    },
+    "Freezing Drizzle" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ледяной моросящий дождь"
+          }
+        }
+      }
+    },
+    "Freezing Rain" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ледяной дождь"
+          }
+        }
+      }
+    },
+    "Frigid" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Морозно"
+          }
+        }
+      }
+    },
+    "Hail" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Град"
+          }
+        }
+      }
+    },
+    "Haze" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дымка"
+          }
+        }
+      }
+    },
+    "Heavy Rain" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сильный дождь"
+          }
+        }
+      }
+    },
+    "Heavy Snow" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сильный снег"
+          }
+        }
+      }
+    },
     "Hello!" : {
       "comment" : "Onboarding welcome!",
       "localizations" : {
@@ -108,6 +268,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Привет!"
+          }
+        }
+      }
+    },
+    "Hot" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жара"
+          }
+        }
+      }
+    },
+    "Hurricane" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ураган"
+          }
+        }
+      }
+    },
+    "Isolated Thunderstorms" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Локальные грозы"
           }
         }
       }
@@ -149,6 +339,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ми/с"
+          }
+        }
+      }
+    },
+    "Mostly Clear" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Преимущественно ясно"
+          }
+        }
+      }
+    },
+    "Mostly Cloudy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Преимущественно облачно"
           }
         }
       }
@@ -204,6 +414,16 @@
         }
       }
     },
+    "Partly Cloudy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переменная облачность"
+          }
+        }
+      }
+    },
     "Philipp Lazarev" : {
       "localizations" : {
         "ru" : {
@@ -224,12 +444,92 @@
         }
       }
     },
+    "Rain" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дождь"
+          }
+        }
+      }
+    },
+    "Scattered Thunderstroms" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Местами грозы"
+          }
+        }
+      }
+    },
     "Settings" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Настройки"
+          }
+        }
+      }
+    },
+    "Sleet" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мокрый снег"
+          }
+        }
+      }
+    },
+    "Smoky" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дым"
+          }
+        }
+      }
+    },
+    "Snow" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Снег"
+          }
+        }
+      }
+    },
+    "Strong Stroms" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сильные штормы"
+          }
+        }
+      }
+    },
+    "Sun Flurries" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Солнце и снег"
+          }
+        }
+      }
+    },
+    "Sun Showers" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Солнце и дождь"
           }
         }
       }
@@ -254,12 +554,42 @@
         }
       }
     },
+    "Thunderstorms" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Гроза"
+          }
+        }
+      }
+    },
     "Time Format" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Формат времени"
+          }
+        }
+      }
+    },
+    "Tropical Strom" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тропический шторм"
+          }
+        }
+      }
+    },
+    "Unknown Weather Condition" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неизвестные погодные условия"
           }
         }
       }
@@ -280,6 +610,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Скорость ветра"
+          }
+        }
+      }
+    },
+    "Windy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ветрено"
+          }
+        }
+      }
+    },
+    "Wintry Mix" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мокрый снег с дождем"
           }
         }
       }

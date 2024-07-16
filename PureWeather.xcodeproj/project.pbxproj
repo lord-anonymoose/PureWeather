@@ -27,6 +27,7 @@
 		8ECB36EB2C3DF128005F713F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8ECB36EA2C3DF128005F713F /* Localizable.xcstrings */; };
 		8ED4F3C22C467D64005411CA /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4F3C12C467D64005411CA /* StorageService.swift */; };
 		8ED4F3C52C467E1F005411CA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4F3C42C467E1F005411CA /* RealmSwift */; };
+		8ED4F3C72C46913A005411CA /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4F3C62C46913A005411CA /* WeatherCondition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		8EBEE00D2C408C4B007979F9 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		8ECB36EA2C3DF128005F713F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		8ED4F3C12C467D64005411CA /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		8ED4F3C62C46913A005411CA /* WeatherCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
 		8EDB36652C45CD26001E018E /* PureWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PureWeather.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				8E0386402C3D35BC002BD3C1 /* Fonts.swift */,
+				8ED4F3C62C46913A005411CA /* WeatherCondition.swift */,
 				8E04E5BB2C3F05A600664BCD /* showAlert.swift */,
 				8EA6052E2C3EA15900FC9EB9 /* Colors.swift */,
 				8E04E5B92C3F011E00664BCD /* Buttons.swift */,
@@ -246,6 +249,7 @@
 				8E0386232C3D2EC8002BD3C1 /* AppDelegate.swift in Sources */,
 				8E0386252C3D2EC8002BD3C1 /* SceneDelegate.swift in Sources */,
 				8E04E5BC2C3F05A600664BCD /* showAlert.swift in Sources */,
+				8ED4F3C72C46913A005411CA /* WeatherCondition.swift in Sources */,
 				8E0386452C3D3AC5002BD3C1 /* PureWeatherService.swift in Sources */,
 				8EA605342C3EAA0600FC9EB9 /* AboutViewController.swift in Sources */,
 				8ED4F3C22C467D64005411CA /* StorageService.swift in Sources */,

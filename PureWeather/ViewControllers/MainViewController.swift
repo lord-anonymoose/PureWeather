@@ -26,8 +26,10 @@ class MainViewController: UIViewController {
         setupNavigationBar()
         
         Task {
-            await PureWeatherService.shared().getWeather()
+            let weather = await PureWeatherService.shared().getWeather()
+            print(weather?.currentWeather.condition.rawValue)
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
