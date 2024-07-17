@@ -8,81 +8,147 @@
 import WeatherKit
 import UIKit
 
-
-
 extension WeatherCondition {
     var image: UIImage {
         switch self {
         case .blizzard:
-            return UIImage(systemName: "wind.snow")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.windColor, .snowflakeColor])
+            return UIImage(systemName: "wind.snow")!.withConfiguration(config)
+            
         case .blowingDust:
-            return UIImage(systemName: "")! // UNKNOWN
+            let config = UIImage.SymbolConfiguration(paletteColors: [.windColor])
+            return UIImage(systemName: "wind")!.withConfiguration(config)
+            
         case .blowingSnow:
-            return UIImage(systemName: "wind.snow")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.windColor, .snowflakeColor])
+            return UIImage(systemName: "wind.snow")!.withConfiguration(config)
+            
         case .breezy:
-            return UIImage(systemName: "wind")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.windColor])
+            return UIImage(systemName: "wind")!.withConfiguration(config)
+            
         case .clear:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.sunColor])
+            return UIImage(systemName: "sun.max.fill")!.withConfiguration(config)
+            
         case .cloudy:
-            return UIImage(systemName: "cloud.fill")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudColor, .cloudColor])
+            return UIImage(systemName: "smoke.fill")!.withConfiguration(config)
+            
         case .drizzle:
-            return UIImage(systemName: "cloud.drizzle.fill")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor, .raindropColor])
+            return UIImage(systemName: "cloud.drizzle.fill")!.withConfiguration(config)
+            
         case .flurries:
-            return UIImage(systemName: "cloud.snow.fill")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor, .snowflakeColor])
+            return UIImage(systemName: "cloud.snow.fill")!.withConfiguration(config)
+            
         case .foggy:
-            return UIImage(systemName: "cloud.fog.fill")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudColor, .cloudColor])
+            return UIImage(systemName: "cloud.fog.fill")!.withConfiguration(config)
+            
         case .freezingDrizzle:
-            return UIImage(systemName: "cloud.sleet.fill")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor, .raindropColor])
+            return UIImage(systemName: "cloud.sleet.fill")!.withConfiguration(config)
+            
         case .freezingRain:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor, .raindropColor])
+            return UIImage(systemName: "cloud.sleet.fill")!.withConfiguration(config)
+            
         case .frigid:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.snowflakeColor, .raindropColor])
+            return UIImage(systemName: "thermometer.snowflake")!.withConfiguration(config)
+            
         case .hail:
-            return UIImage(systemName: "cloud.hail.fill")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor, .snowflakeColor])
+            return UIImage(systemName: "cloud.hail.fill")!.withConfiguration(config)
+            
         case .haze:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudColor, .cloudColor])
+            return UIImage(systemName: "cloud.fog.fill")!.withConfiguration(config)
+            
         case .heavyRain:
-            return UIImage(systemName: "cloud.heavyrain.fill")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudColor, .raindropColor])
+            return UIImage(systemName: "cloud.heavyrain.fill")!.withConfiguration(config)
+            
         case .heavySnow:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudColor, .snowflakeColor])
+            return UIImage(systemName: "cloud.snow.fill")!.withConfiguration(config)
+            
         case .hot:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.red, .sunColor, .black])
+            return UIImage(systemName: "thermometer.sun.fill")!.withConfiguration(config)
+            
         case .hurricane:
-            return UIImage(systemName: "hurricane")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor])
+            return UIImage(systemName: "hurricane")!.withConfiguration(config)
+            
         case .isolatedThunderstorms:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor, .thunderColor])
+            return UIImage(systemName: "cloud.bolt.fill")!.withConfiguration(config)
+
         case .mostlyClear:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudColor])
+            return UIImage(systemName: "icloud.slash.fill")!.withConfiguration(config)
+            
         case .mostlyCloudy:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudColor])
+            return UIImage(systemName: "cloud.fill")!.withConfiguration(config)
+            
         case .partlyCloudy:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudColor])
+            return UIImage(systemName: "cloud.fill")!.withConfiguration(config)
+            
         case .rain:
-            return UIImage(systemName: "cloud.rain.fill")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor, .raindropColor])
+            return UIImage(systemName: "cloud.rain.fill")!.withConfiguration(config)
+            
         case .scatteredThunderstorms:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor, .thunderColor])
+            return UIImage(systemName: "cloud.bolt.fill")!.withConfiguration(config)
+            
         case .sleet:
-            return UIImage(systemName: "cloud.sleet.fill")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor, .raindropColor, .snowflakeColor])
+            return UIImage(systemName: "cloud.sleet.fill")!.withConfiguration(config)
+            
         case .smoky:
-            return UIImage(systemName: "smoke.fill")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.smokeColor])
+            return UIImage(systemName: "smoke.fill")!.withConfiguration(config)
+            
         case .snow:
-            return UIImage(systemName: "cloud.snow")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor, .snowflakeColor])
+            return UIImage(systemName: "cloud.snow.fill")!.withConfiguration(config)
+            
         case .strongStorms:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.windColor])
+            return UIImage(systemName: "wind")!.withConfiguration(config)
+            
         case .sunFlurries:
-            return UIImage(systemName: "sun.snow")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.snowflakeColor, .sunColor])
+            return UIImage(systemName: "sun.snow.fill")!.withConfiguration(config)
+            
         case .sunShowers:
-            return UIImage(systemName: "sun.rain.fill")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.raindropColor, .sunColor])
+            return UIImage(systemName: "sun.rain.fill")!.withConfiguration(config)
+            
         case .thunderstorms:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor, .thunderColor])
+            return UIImage(systemName: "cloud.bolt.fill")!.withConfiguration(config)
+            
         case .tropicalStorm:
-            return UIImage(systemName: "tropicalstorm")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.cloudDarkColor])
+            return UIImage(systemName: "tropicalstorm")!.withConfiguration(config)
+            
         case .windy:
-            return UIImage(systemName: "wind")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.windColor])
+            return UIImage(systemName: "wind")!.withConfiguration(config)
+            
         case .wintryMix:
-            return UIImage(systemName: "")!
+            let config = UIImage.SymbolConfiguration(paletteColors: [.windColor, .raindropColor])
+            return UIImage(systemName: "cloud.sleet.fill")!.withConfiguration(config)
+            
         @unknown default:
-            return UIImage(systemName: "")!
+            return UIImage(systemName: "exclamationmark.triangle.fill")!
         }
     }
 }

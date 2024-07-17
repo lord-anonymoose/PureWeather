@@ -11,10 +11,24 @@ import CoreLocation
 
 class MainViewController: UIViewController {
     
-
-
-    // MARK: - Subviews
     
+    var weather: Weather? {
+        didSet {
+            if let newWeather = self.weather {
+                weatherView.updateSubviews(weather: newWeather)
+                print("Has weather")
+            } else {
+                print("No weather")
+            }
+        }
+    }
+    
+    // MARK: - Subviews
+    private lazy var weatherView: WeatherView = {
+        let view = WeatherView(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     // MARK: -  Lifecycle
     override func viewDidLoad() {
@@ -26,8 +40,7 @@ class MainViewController: UIViewController {
         setupNavigationBar()
         
         Task {
-            let weather = await PureWeatherService.shared().getWeather()
-            print(weather?.currentWeather.condition.rawValue)
+            self.weather = await PureWeatherService.shared().getWeather()
         }
         
     }
@@ -50,12 +63,28 @@ class MainViewController: UIViewController {
         view.backgroundColor = .systemBackground
     }
     
+    private func updateSubviews() {
+        self.weatherView.imageView.image = self.weather?.currentWeather.condition.image
+        self.weatherView.conditionLabel.text = self.weather?.currentWeather.condition.localizedString
+        if let temp = self.weather?.currentWeather.temperature.value {
+            self.weatherView.temperatureLabel.text = temp.formattedTemperatureFahrenheit()
+        }        
+    }
+    
     private func addSubviews() {
-        
+        view.addSubview(weatherView)
     }
     
     private func setupConstraints() {
+        let safeAreaGuide = view.safeAreaLayoutGuide
         
+        NSLayoutConstraint.activate([
+            weatherView.centerYAnchor.constraint(equalTo: safeAreaGuide.centerYAnchor),
+            weatherView.heightAnchor.constraint(equalToConstant: 400),
+            weatherView.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor),
+            weatherView.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 25),
+            weatherView.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -25)
+        ])
     }
     
     private func setupNavigationBar() {
@@ -63,6 +92,5 @@ class MainViewController: UIViewController {
         let settingsButton = UIBarButtonItem(image: settingsImage, style: .plain, target: self, action: #selector(settingsButtonTapped))
         navigationItem.rightBarButtonItem = settingsButton
     }
-    
 }
 

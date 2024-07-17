@@ -19,11 +19,11 @@ final class PureWeatherService {
     }
     
     func getWeather() async -> Weather? {
-        let syracuse = CLLocation(latitude: 43, longitude: -76)
+        let moscow = CLLocation(latitude: 55.7558, longitude: 37.6176)
         
         do {
             let weatherService = WeatherService()
-            let weather = try await weatherService.weather(for: syracuse)
+            let weather = try await weatherService.weather(for: moscow)
             return weather
         } catch {
             print("Failed to get weather: \(error)")
