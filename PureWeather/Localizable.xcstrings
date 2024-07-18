@@ -554,6 +554,16 @@
         }
       }
     },
+    "This application is not available for devices with Jailbreak. We strongly condemn hacking iOS and installation of illegal software!" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Это приложение недоступно для устройств с Джейлбрейком. Мы осуждаем взлом iOS и установку нелегального ПО!"
+          }
+        }
+      }
+    },
     "Thunderstorms" : {
       "localizations" : {
         "ru" : {

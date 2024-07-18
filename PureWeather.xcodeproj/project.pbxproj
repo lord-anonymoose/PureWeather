@@ -37,6 +37,9 @@
 		8EF139F12C4941FA0077E283 /* EncryptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139F02C4941FA0077E283 /* EncryptionService.swift */; };
 		8EF139FA2C4942BB0077E283 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139F92C4942BB0077E283 /* KeychainWrapper.swift */; };
 		8EF139FB2C4942BB0077E283 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139F82C4942BB0077E283 /* KeychainItemAccessibility.swift */; };
+		8EF139FD2C4947210077E283 /* JailbreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139FC2C4947210077E283 /* JailbreakViewController.swift */; };
+		8EF139FF2C49480F0077E283 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139FE2C49480F0077E283 /* UIViewController.swift */; };
+		8EF13A012C49484E0077E283 /* isJailbroken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF13A002C49484E0077E283 /* isJailbroken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,9 @@
 		8EF139F02C4941FA0077E283 /* EncryptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionService.swift; sourceTree = "<group>"; };
 		8EF139F82C4942BB0077E283 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		8EF139F92C4942BB0077E283 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		8EF139FC2C4947210077E283 /* JailbreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakViewController.swift; sourceTree = "<group>"; };
+		8EF139FE2C49480F0077E283 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		8EF13A002C49484E0077E283 /* isJailbroken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isJailbroken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,8 @@
 				8E4F070B2C47E922008168DA /* Foundation.swift */,
 				8E04E5B92C3F011E00664BCD /* Buttons.swift */,
 				8EF139EE2C491F100077E283 /* CLLocation.swift */,
+				8EF139FE2C49480F0077E283 /* UIViewController.swift */,
+				8EF13A002C49484E0077E283 /* isJailbroken.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -173,6 +181,7 @@
 			children = (
 				8E0386262C3D2EC8002BD3C1 /* OnboardingViewController.swift */,
 				8E03863A2C3D3237002BD3C1 /* PrivacyViewController.swift */,
+				8EF139FC2C4947210077E283 /* JailbreakViewController.swift */,
 			);
 			path = "First App Launch";
 			sourceTree = "<group>";
@@ -286,9 +295,11 @@
 			files = (
 				8EF139EB2C486DF70077E283 /* MainViewController.swift in Sources */,
 				8E0386412C3D35BC002BD3C1 /* Fonts.swift in Sources */,
+				8EF139FF2C49480F0077E283 /* UIViewController.swift in Sources */,
 				8EA6052F2C3EA15900FC9EB9 /* Colors.swift in Sources */,
 				8EF139EF2C491F100077E283 /* CLLocation.swift in Sources */,
 				8EBEE00E2C408C4B007979F9 /* SettingsTableViewCell.swift in Sources */,
+				8EF13A012C49484E0077E283 /* isJailbroken.swift in Sources */,
 				8E0386272C3D2EC8002BD3C1 /* OnboardingViewController.swift in Sources */,
 				8E04E5BA2C3F011E00664BCD /* Buttons.swift in Sources */,
 				8ED4F3C92C469DB1005411CA /* WeatherView.swift in Sources */,
@@ -302,6 +313,7 @@
 				8ED4F3C72C46913A005411CA /* WeatherCondition.swift in Sources */,
 				8E0386452C3D3AC5002BD3C1 /* PureWeatherService.swift in Sources */,
 				8EA605342C3EAA0600FC9EB9 /* AboutViewController.swift in Sources */,
+				8EF139FD2C4947210077E283 /* JailbreakViewController.swift in Sources */,
 				8ED4F3C22C467D64005411CA /* StorageService.swift in Sources */,
 				8E0386472C3D3C8F002BD3C1 /* AppService.swift in Sources */,
 				8E03863B2C3D3237002BD3C1 /* PrivacyViewController.swift in Sources */,

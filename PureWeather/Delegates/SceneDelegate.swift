@@ -17,6 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                             
         let window = UIWindow(windowScene: scene)
         
+        guard !isJailbroken() else {
+            let navigationController = JailbreakViewController()
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
+            self.window = window
+            return
+        }
+        
         let mainViewController = MainViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         let navigationController = UINavigationController(rootViewController: mainViewController)
         window.rootViewController = navigationController
