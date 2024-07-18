@@ -34,6 +34,9 @@
 		8EF139EB2C486DF70077E283 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139EA2C486DF70077E283 /* MainViewController.swift */; };
 		8EF139ED2C4875680077E283 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139EC2C4875680077E283 /* AddCityViewController.swift */; };
 		8EF139EF2C491F100077E283 /* CLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139EE2C491F100077E283 /* CLLocation.swift */; };
+		8EF139F12C4941FA0077E283 /* EncryptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139F02C4941FA0077E283 /* EncryptionService.swift */; };
+		8EF139FA2C4942BB0077E283 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139F92C4942BB0077E283 /* KeychainWrapper.swift */; };
+		8EF139FB2C4942BB0077E283 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139F82C4942BB0077E283 /* KeychainItemAccessibility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		8EF139EA2C486DF70077E283 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8EF139EC2C4875680077E283 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		8EF139EE2C491F100077E283 /* CLLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocation.swift; sourceTree = "<group>"; };
+		8EF139F02C4941FA0077E283 /* EncryptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionService.swift; sourceTree = "<group>"; };
+		8EF139F82C4942BB0077E283 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		8EF139F92C4942BB0077E283 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,8 @@
 				8E0386462C3D3C8F002BD3C1 /* AppService.swift */,
 				8ED4F3C12C467D64005411CA /* StorageService.swift */,
 				8E0386442C3D3AC5002BD3C1 /* PureWeatherService.swift */,
+				8EF139F02C4941FA0077E283 /* EncryptionService.swift */,
+				8EF139F72C4942BB0077E283 /* KeychainTools */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -186,6 +194,15 @@
 				8ED4F3CA2C469DBC005411CA /* WeatherDetailedView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8EF139F72C4942BB0077E283 /* KeychainTools */ = {
+			isa = PBXGroup;
+			children = (
+				8EF139F82C4942BB0077E283 /* KeychainItemAccessibility.swift */,
+				8EF139F92C4942BB0077E283 /* KeychainWrapper.swift */,
+			);
+			path = KeychainTools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +293,10 @@
 				8E04E5BA2C3F011E00664BCD /* Buttons.swift in Sources */,
 				8ED4F3C92C469DB1005411CA /* WeatherView.swift in Sources */,
 				8EF139ED2C4875680077E283 /* AddCityViewController.swift in Sources */,
+				8EF139FA2C4942BB0077E283 /* KeychainWrapper.swift in Sources */,
 				8E0386232C3D2EC8002BD3C1 /* AppDelegate.swift in Sources */,
 				8ED4F3CB2C469DBC005411CA /* WeatherDetailedView.swift in Sources */,
+				8EF139F12C4941FA0077E283 /* EncryptionService.swift in Sources */,
 				8E0386252C3D2EC8002BD3C1 /* SceneDelegate.swift in Sources */,
 				8E04E5BC2C3F05A600664BCD /* showAlert.swift in Sources */,
 				8ED4F3C72C46913A005411CA /* WeatherCondition.swift in Sources */,
@@ -286,6 +305,7 @@
 				8ED4F3C22C467D64005411CA /* StorageService.swift in Sources */,
 				8E0386472C3D3C8F002BD3C1 /* AppService.swift in Sources */,
 				8E03863B2C3D3237002BD3C1 /* PrivacyViewController.swift in Sources */,
+				8EF139FB2C4942BB0077E283 /* KeychainItemAccessibility.swift in Sources */,
 				8E03863D2C3D3288002BD3C1 /* CityViewController.swift in Sources */,
 				8E4F070C2C47E922008168DA /* Foundation.swift in Sources */,
 				8E03863F2C3D32C1002BD3C1 /* SettingsViewController.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import Foundation
 import MapKit
+import RealmSwift
 
 
 
@@ -16,6 +17,12 @@ extension CLLocation {
         let longitude = String(format: "%f", self.coordinate.longitude)
         let result = "\(latitude)_\(longitude)"
         return result
+    }
+    
+    func makeStored() -> StoredLocation {
+        let storedLocation = StoredLocation()
+        storedLocation.coordinates = self.makeString()
+        return storedLocation
     }
     
     func getCityName(completion: @escaping (String?) -> Void) {
@@ -47,4 +54,8 @@ extension CLLocation {
         
         self.init(latitude: latitude, longitude: longitude)
     }
+}
+
+final class StoredLocation: Object {
+    @objc dynamic var coordinates: String = ""
 }

@@ -116,10 +116,9 @@ class WeatherView: UIView {
             } else {
                 print("City not found")
             }
+            self.imageView.image = weather.currentWeather.condition.image
+            self.conditionLabel.text = weather.currentWeather.condition.localizedString
+            self.temperatureLabel.text = weather.currentWeather.temperature.value.formattedTemperatureCelcius()
         }
-        
-        imageView.image = weather.currentWeather.condition.image
-        conditionLabel.text = weather.currentWeather.condition.localizedString
-        temperatureLabel.text = weather.currentWeather.temperature.value.formattedTemperatureCelcius()
     }
 }

@@ -82,11 +82,18 @@ class MainViewController: UIPageViewController {
     
     private func testFunctionality() {
         let moscow = CLLocation(latitude: 55.7558, longitude: 37.6173)
-        let moscowViewController = CityViewController(city: moscow)
+        StorageService.shared().postLocation(location: moscow)
+        //let moscowViewController = CityViewController(city: moscow)
         let sanFrancisco = CLLocation(latitude: 37.7749, longitude: -122.4194)
-        let sanFranciscoViewController = CityViewController(city: sanFrancisco)
-        self.pages.append(moscowViewController)
-        self.pages.append(sanFranciscoViewController)
+        StorageService.shared().postLocation(location: sanFrancisco)
+        //let sanFranciscoViewController = CityViewController(city: sanFrancisco)
+        //self.pages.append(moscowViewController)
+        //self.pages.append(sanFranciscoViewController)
+        let locations = StorageService.shared().fetchLocations()
+        for location in locations {
+            let locationViewController = CityViewController(city: location)
+            self.pages.append(locationViewController)
+        }
     }
 }
 

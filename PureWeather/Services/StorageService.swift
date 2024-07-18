@@ -9,6 +9,10 @@ import Foundation
 import WeatherKit
 import RealmSwift
 import UIKit
+import MapKit
+
+
+
 
 final class HourlyWeather: Object {
     @objc dynamic var temperature: Double = 0
@@ -30,30 +34,56 @@ final class CityWeather: Object {
 }
 
 final class StorageService {
+    
+    var config = Realm.Configuration(encryptionKey: EncryptionService.shared().getOrGenerateEncryptionKey())
+
     private init() {}
     
     static func shared() -> StorageService {
         return StorageService()
     }
     
-    func makeWeatherStored(weather: Weather) {
-        for forecast in weather.hourlyForecast {
-            let temperature = forecast.temperature
-            let condition = forecast.condition.rawValue
-            let wind = forecast.wind
-            let precipitation = forecast.precipitation
-            let humidity = forecast.humidity
-            let uvIndex = forecast.uvIndex
-            let icon = "UNKNOWN"
+    func postLocation(location: CLLocation) {
+        let storedLocation = location.makeStored()
+        do {
+            let realm = try Realm(configuration: config)
+            try realm.write {
+                realm.add(storedLocation)
+            }
+        } catch {
+            print("Failed to write a quote: \(error)")
+            return
         }
     }
     
-    func getWeatherBackup() {
+    func deleteLocation(location: CLLocation) {
         do {
-            let realm = try Realm()
-            let quotes = realm.objects(CityWeather.self)
+            let realm = try Realm(configuration: config)
+            try realm.write {
+                let storedLocation = location.makeStored()
+                realm.delete(storedLocation)
+            }
         } catch {
-            print("Failed to fetch quotes from Realm: \(error)")
+            print("Failed to delete a location: \(error)")
+            return
+        }
+    }
+    
+    func fetchLocations() -> [CLLocation] {
+        do {
+            let realm = try Realm(configuration: config)
+            let storedLocations = realm.objects(StoredLocation.self)
+            var locations = [CLLocation]()
+            for storedLocation in storedLocations {
+                let location = CLLocation(from: storedLocation.coordinates)
+                if let newLocation = location {
+                    locations.append(newLocation)
+                }
+            }
+            return Array(locations)
+        } catch {
+            print("Failed to fetch locations from Realm: \(error)")
+            return []
         }
     }
 }
