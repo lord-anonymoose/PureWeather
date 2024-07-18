@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                             
         let window = UIWindow(windowScene: scene)
         
-        let mainViewController = MainViewController()
+        let mainViewController = MainViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         let navigationController = UINavigationController(rootViewController: mainViewController)
         window.rootViewController = navigationController
 

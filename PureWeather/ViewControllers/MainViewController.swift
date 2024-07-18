@@ -2,54 +2,45 @@
 //  MainViewController.swift
 //  PureWeather
 //
-//  Created by Philipp Lazarev on 09.07.2024.
+//  Created by Philipp Lazarev on 18.07.2024.
 //
 
+import Foundation
 import UIKit
-import WeatherKit
-import CoreLocation
+import MapKit
 
-class MainViewController: UIViewController {
-    
-    
-    var weather: Weather? {
-        didSet {
-            if let newWeather = self.weather {
-                weatherView.updateSubviews(weather: newWeather)
-                print("Has weather")
-            } else {
-                print("No weather")
-            }
-        }
-    }
+
+
+class MainViewController: UIPageViewController {
+
+    var pages: [CityViewController] = []
     
     // MARK: - Subviews
-    private lazy var weatherView: WeatherView = {
-        let view = WeatherView(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    private lazy var pageControl: UIPageControl = {
+        let control = UIPageControl()
+        control.numberOfPages = pages.count
+        control.currentPage = 0
+        control.translatesAutoresizingMaskIntoConstraints = false
+        return control
     }()
     
-    // MARK: -  Lifecycle
+    
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        testFunctionality()
+
+        self.dataSource = self
+        self.delegate = self
+
+        if let firstPage = pages.first {
+            setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
+        }
         setupUI()
         addSubviews()
-        setupConstraints()
+        setupConsraints()
         setupNavigationBar()
-        
-        Task {
-            self.weather = await PureWeatherService.shared().getWeather()
-        }
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        setupNavigationBar()
-        
     }
     
     // MARK: - Actions
@@ -58,39 +49,70 @@ class MainViewController: UIViewController {
         self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
+    @objc func addCityButtonTapped(_ button: UIButton) {
+        let addCityViewController = AddCityViewController()
+        self.navigationController?.pushViewController(addCityViewController, animated: true)
+    }
+    
     // MARK: - Private
     private func setupUI() {
         view.backgroundColor = .systemBackground
     }
     
-    private func updateSubviews() {
-        self.weatherView.imageView.image = self.weather?.currentWeather.condition.image
-        self.weatherView.conditionLabel.text = self.weather?.currentWeather.condition.localizedString
-        if let temp = self.weather?.currentWeather.temperature.value {
-            self.weatherView.temperatureLabel.text = temp.formattedTemperatureFahrenheit()
-        }        
-    }
-    
     private func addSubviews() {
-        view.addSubview(weatherView)
+        view.addSubview(pageControl)
     }
     
-    private func setupConstraints() {
-        let safeAreaGuide = view.safeAreaLayoutGuide
-        
+    private func setupConsraints() {
         NSLayoutConstraint.activate([
-            weatherView.centerYAnchor.constraint(equalTo: safeAreaGuide.centerYAnchor),
-            weatherView.heightAnchor.constraint(equalToConstant: 400),
-            weatherView.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor),
-            weatherView.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 25),
-            weatherView.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -25)
+            pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
     private func setupNavigationBar() {
+        let addCityImage = UIImage(systemName: "plus")
+        let addCityButton = UIBarButtonItem(image: addCityImage, style: .plain, target: self, action: #selector(addCityButtonTapped))
+        navigationItem.leftBarButtonItem = addCityButton
+        
         let settingsImage = UIImage(systemName: "gear")
         let settingsButton = UIBarButtonItem(image: settingsImage, style: .plain, target: self, action: #selector(settingsButtonTapped))
         navigationItem.rightBarButtonItem = settingsButton
     }
+    
+    private func testFunctionality() {
+        let moscow = CLLocation(latitude: 55.7558, longitude: 37.6173)
+        let moscowViewController = CityViewController(city: moscow)
+        let sanFrancisco = CLLocation(latitude: 37.7749, longitude: -122.4194)
+        let sanFranciscoViewController = CityViewController(city: sanFrancisco)
+        self.pages.append(moscowViewController)
+        self.pages.append(sanFranciscoViewController)
+    }
 }
 
+
+extension MainViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+  
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let contentVC = viewController as? CityViewController,
+              let currentIndex = pages.firstIndex(of: contentVC),
+              currentIndex > 0 else {
+            return nil
+        }
+        return pages[currentIndex - 1]
+    }
+
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let contentVC = viewController as? CityViewController,
+              let currentIndex = pages.firstIndex(of: contentVC),
+              currentIndex < pages.count - 1 else {
+            return nil
+        }
+        return pages[currentIndex + 1]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard completed, let currentPage = pageViewController.viewControllers?.first, let currentIndex = pages.firstIndex(of: currentPage as! CityViewController) else { return }
+        pageControl.currentPage = currentIndex
+    }
+}
