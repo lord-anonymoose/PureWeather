@@ -1,11 +1,13 @@
 //
-//  Alert.swift
+//  UIViewController.swift
 //  PureWeather
 //
-//  Created by Philipp Lazarev on 10.07.2024.
+//  Created by Philipp Lazarev on 18.07.2024.
 //
 
+import Foundation
 import UIKit
+
 
 
 extension UIViewController {

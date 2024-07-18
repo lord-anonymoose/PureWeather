@@ -19,7 +19,6 @@
 		8E0386452C3D3AC5002BD3C1 /* PureWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386442C3D3AC5002BD3C1 /* PureWeatherService.swift */; };
 		8E0386472C3D3C8F002BD3C1 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0386462C3D3C8F002BD3C1 /* AppService.swift */; };
 		8E04E5BA2C3F011E00664BCD /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E04E5B92C3F011E00664BCD /* Buttons.swift */; };
-		8E04E5BC2C3F05A600664BCD /* showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E04E5BB2C3F05A600664BCD /* showAlert.swift */; };
 		8E04E5BF2C3F0AFC00664BCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E04E5BD2C3F0AFC00664BCD /* InfoPlist.strings */; };
 		8E4F070C2C47E922008168DA /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F070B2C47E922008168DA /* Foundation.swift */; };
 		8EA6052F2C3EA15900FC9EB9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA6052E2C3EA15900FC9EB9 /* Colors.swift */; };
@@ -40,6 +39,8 @@
 		8EF139FD2C4947210077E283 /* JailbreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139FC2C4947210077E283 /* JailbreakViewController.swift */; };
 		8EF139FF2C49480F0077E283 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF139FE2C49480F0077E283 /* UIViewController.swift */; };
 		8EF13A012C49484E0077E283 /* isJailbroken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF13A002C49484E0077E283 /* isJailbroken.swift */; };
+		8EF13A042C494FA40077E283 /* UITextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF13A032C494FA40077E283 /* UITextFieldWithPadding.swift */; };
+		8EF13A062C4959B20077E283 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF13A052C4959B20077E283 /* MKMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +58,6 @@
 		8E0386442C3D3AC5002BD3C1 /* PureWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PureWeatherService.swift; sourceTree = "<group>"; };
 		8E0386462C3D3C8F002BD3C1 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
 		8E04E5B92C3F011E00664BCD /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		8E04E5BB2C3F05A600664BCD /* showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showAlert.swift; sourceTree = "<group>"; };
 		8E04E5BE2C3F0AFC00664BCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E04E5C02C3F0C6400664BCD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E4F070B2C47E922008168DA /* Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
@@ -79,6 +79,8 @@
 		8EF139FC2C4947210077E283 /* JailbreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakViewController.swift; sourceTree = "<group>"; };
 		8EF139FE2C49480F0077E283 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		8EF13A002C49484E0077E283 /* isJailbroken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isJailbroken.swift; sourceTree = "<group>"; };
+		8EF13A032C494FA40077E283 /* UITextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldWithPadding.swift; sourceTree = "<group>"; };
+		8EF13A052C4959B20077E283 /* MKMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,14 +153,10 @@
 		8E0386382C3D31EE002BD3C1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8E0386402C3D35BC002BD3C1 /* Fonts.swift */,
-				8ED4F3C62C46913A005411CA /* WeatherCondition.swift */,
-				8E04E5BB2C3F05A600664BCD /* showAlert.swift */,
-				8EA6052E2C3EA15900FC9EB9 /* Colors.swift */,
+				8EF13A022C494EEA0077E283 /* UI Elements */,
 				8E4F070B2C47E922008168DA /* Foundation.swift */,
-				8E04E5B92C3F011E00664BCD /* Buttons.swift */,
+				8ED4F3C62C46913A005411CA /* WeatherCondition.swift */,
 				8EF139EE2C491F100077E283 /* CLLocation.swift */,
-				8EF139FE2C49480F0077E283 /* UIViewController.swift */,
 				8EF13A002C49484E0077E283 /* isJailbroken.swift */,
 			);
 			path = Extensions;
@@ -212,6 +210,19 @@
 				8EF139F92C4942BB0077E283 /* KeychainWrapper.swift */,
 			);
 			path = KeychainTools;
+			sourceTree = "<group>";
+		};
+		8EF13A022C494EEA0077E283 /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				8EF139FE2C49480F0077E283 /* UIViewController.swift */,
+				8E04E5B92C3F011E00664BCD /* Buttons.swift */,
+				8EA6052E2C3EA15900FC9EB9 /* Colors.swift */,
+				8E0386402C3D35BC002BD3C1 /* Fonts.swift */,
+				8EF13A032C494FA40077E283 /* UITextFieldWithPadding.swift */,
+				8EF13A052C4959B20077E283 /* MKMapView.swift */,
+			);
+			path = "UI Elements";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,15 +320,16 @@
 				8ED4F3CB2C469DBC005411CA /* WeatherDetailedView.swift in Sources */,
 				8EF139F12C4941FA0077E283 /* EncryptionService.swift in Sources */,
 				8E0386252C3D2EC8002BD3C1 /* SceneDelegate.swift in Sources */,
-				8E04E5BC2C3F05A600664BCD /* showAlert.swift in Sources */,
 				8ED4F3C72C46913A005411CA /* WeatherCondition.swift in Sources */,
 				8E0386452C3D3AC5002BD3C1 /* PureWeatherService.swift in Sources */,
 				8EA605342C3EAA0600FC9EB9 /* AboutViewController.swift in Sources */,
 				8EF139FD2C4947210077E283 /* JailbreakViewController.swift in Sources */,
 				8ED4F3C22C467D64005411CA /* StorageService.swift in Sources */,
+				8EF13A042C494FA40077E283 /* UITextFieldWithPadding.swift in Sources */,
 				8E0386472C3D3C8F002BD3C1 /* AppService.swift in Sources */,
 				8E03863B2C3D3237002BD3C1 /* PrivacyViewController.swift in Sources */,
 				8EF139FB2C4942BB0077E283 /* KeychainItemAccessibility.swift in Sources */,
+				8EF13A062C4959B20077E283 /* MKMapView.swift in Sources */,
 				8E03863D2C3D3288002BD3C1 /* CityViewController.swift in Sources */,
 				8E4F070C2C47E922008168DA /* Foundation.swift in Sources */,
 				8E03863F2C3D32C1002BD3C1 /* SettingsViewController.swift in Sources */,

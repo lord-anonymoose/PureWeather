@@ -20,6 +20,9 @@ class MainViewController: UIPageViewController {
         let control = UIPageControl()
         control.numberOfPages = pages.count
         control.currentPage = 0
+        control.pageIndicatorTintColor = .lightGray // Color for non-selected dots
+        control.currentPageIndicatorTintColor = .accentColor // Color for the selected dot
+
         control.translatesAutoresizingMaskIntoConstraints = false
         return control
     }()
@@ -29,18 +32,18 @@ class MainViewController: UIPageViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        testFunctionality()
-
-        self.dataSource = self
+        updatePages()
         self.delegate = self
 
-        if let firstPage = pages.first {
-            setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
-        }
         setupUI()
         addSubviews()
         setupConsraints()
         setupNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updatePages()
     }
     
     // MARK: - Actions
@@ -70,6 +73,23 @@ class MainViewController: UIPageViewController {
         ])
     }
     
+    private func updatePages() {
+        self.pages = []
+        let locations = StorageService.shared().fetchLocations()
+        for location in locations {
+            let locationViewController = CityViewController(city: location)
+            self.pages.append(locationViewController)
+        }
+        self.dataSource = self
+        
+        self.pageControl.numberOfPages = self.pages.count
+        self.pageControl.currentPage = 0
+        
+        if let firstPage = pages.first {
+            setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
+        }
+    }
+    
     private func setupNavigationBar() {
         let addCityImage = UIImage(systemName: "plus")
         let addCityButton = UIBarButtonItem(image: addCityImage, style: .plain, target: self, action: #selector(addCityButtonTapped))
@@ -81,14 +101,6 @@ class MainViewController: UIPageViewController {
     }
     
     private func testFunctionality() {
-        let moscow = CLLocation(latitude: 55.7558, longitude: 37.6173)
-        StorageService.shared().postLocation(location: moscow)
-        //let moscowViewController = CityViewController(city: moscow)
-        let sanFrancisco = CLLocation(latitude: 37.7749, longitude: -122.4194)
-        StorageService.shared().postLocation(location: sanFrancisco)
-        //let sanFranciscoViewController = CityViewController(city: sanFrancisco)
-        //self.pages.append(moscowViewController)
-        //self.pages.append(sanFranciscoViewController)
         let locations = StorageService.shared().fetchLocations()
         for location in locations {
             let locationViewController = CityViewController(city: location)

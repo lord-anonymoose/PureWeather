@@ -86,5 +86,18 @@ final class StorageService {
             return []
         }
     }
+    
+    func deleteAllLocations() {
+        do {
+            let realm = try Realm(configuration: config)
+            let storedLocations = realm.objects(StoredLocation.self)
+            
+            try realm.write {
+                realm.delete(storedLocations)
+            }
+        } catch {
+            print("Failed to delete all locations: \(error)")
+        }
+    }
 }
 

@@ -22,7 +22,7 @@ extension UIColor {
     }
     
     static var cloudColor: UIColor {
-        return UIColor.lightGray.withAlphaComponent(0.2)
+        return UIColor(red: 0.933, green: 0.933, blue: 0.933, alpha: 1.0)
     }
     
     static var cloudDarkColor: UIColor {

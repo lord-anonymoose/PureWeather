@@ -19,11 +19,5 @@ extension UIFont {
     static var labelFont: UIFont {
         return UIFont.systemFont(ofSize: 20, weight: .regular)
     }
-    
-    /*
-    static var secondaryLabelFont: UIFont {
-        let secondaryLabelFont = UIFont.systemFont(ofSize: <#T##CGFloat#>, weight: <#T##UIFont.Weight#>)
-    }
-    */
 }
     

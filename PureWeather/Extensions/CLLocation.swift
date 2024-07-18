@@ -59,3 +59,23 @@ extension CLLocation {
 final class StoredLocation: Object {
     @objc dynamic var coordinates: String = ""
 }
+
+func getLocation(from cityName: String, completion: @escaping (CLLocation?) -> Void) {
+    let geocoder = CLGeocoder()
+    
+    geocoder.geocodeAddressString(cityName) { placemarks, error in
+        if let error = error {
+            print("Geocoding error: \(error)")
+            completion(nil)
+            return
+        }
+        
+        guard let placemark = placemarks?.first,
+              let location = placemark.location else {
+            completion(nil)
+            return
+        }
+        
+        completion(location)
+    }
+}

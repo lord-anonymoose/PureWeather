@@ -121,6 +121,16 @@
         }
       }
     },
+    "City name..." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Название города..."
+          }
+        }
+      }
+    },
     "Clear" : {
       "localizations" : {
         "ru" : {
@@ -137,6 +147,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Облачно"
+          }
+        }
+      }
+    },
+    "Could not find a city with a name you have provided!" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Город с введенным именем не найден!"
           }
         }
       }
@@ -454,6 +474,16 @@
         }
       }
     },
+    "Save Location" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранить локацию"
+          }
+        }
+      }
+    },
     "Scattered Thunderstroms" : {
       "localizations" : {
         "ru" : {
@@ -470,6 +500,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Настройки"
+          }
+        }
+      }
+    },
+    "Show location" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Город на карте"
           }
         }
       }
