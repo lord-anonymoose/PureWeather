@@ -121,6 +121,16 @@
         }
       }
     },
+    "Cities are yet to be added" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Необходимо добавить города"
+          }
+        }
+      }
+    },
     "City name..." : {
       "localizations" : {
         "ru" : {

@@ -23,6 +23,14 @@ class WeatherView: UIView {
         return label
     }()
     
+    lazy var locationImageView: UIImageView = {
+        let image = UIImage(systemName: "location.fill")?.withTintColor(.label, renderingMode: .alwaysOriginal)
+        let imageView = UIImageView(image: image)
+        imageView.isHidden = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         //imageView.image = defaultImage
@@ -73,6 +81,7 @@ class WeatherView: UIView {
     // MARK: - Private
     private func addSubviews() {
         addSubview(cityLabel)
+        addSubview(locationImageView)
         addSubview(imageView)
         addSubview(conditionLabel)
         addSubview(temperatureLabel)
@@ -82,6 +91,13 @@ class WeatherView: UIView {
         NSLayoutConstraint.activate([
             cityLabel.topAnchor.constraint(equalTo: topAnchor),
             cityLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            locationImageView.topAnchor.constraint(equalTo: cityLabel.topAnchor),
+            locationImageView.bottomAnchor.constraint(equalTo: cityLabel.bottomAnchor),
+            locationImageView.trailingAnchor.constraint(equalTo: cityLabel.leadingAnchor),
+            locationImageView.widthAnchor.constraint(equalTo: cityLabel.heightAnchor, multiplier: 1.0)
         ])
         
         NSLayoutConstraint.activate([
@@ -109,7 +125,7 @@ class WeatherView: UIView {
         temperatureLabel.text = weather.currentWeather.temperature.value.formattedTemperatureCelcius()
     }
     
-    func updateSubviews(for city: CLLocation, weather: Weather) {
+    func updateSubviews(for city: CLLocation, weather: Weather, isLocated: Bool = false) {
         city.getCityName { cityName in
             if let location = cityName {
                 self.cityLabel.text = location
@@ -119,6 +135,9 @@ class WeatherView: UIView {
             self.imageView.image = weather.currentWeather.condition.image
             self.conditionLabel.text = weather.currentWeather.condition.localizedString
             self.temperatureLabel.text = weather.currentWeather.temperature.value.formattedTemperatureCelcius()
+        }
+        if isLocated {
+            self.locationImageView.isHidden = false
         }
     }
 }

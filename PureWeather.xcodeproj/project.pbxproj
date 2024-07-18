@@ -22,6 +22,7 @@
 		8E04E5BF2C3F0AFC00664BCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E04E5BD2C3F0AFC00664BCD /* InfoPlist.strings */; };
 		8E4F070C2C47E922008168DA /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F070B2C47E922008168DA /* Foundation.swift */; };
 		8E843F772C49CD0D00684E7B /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4F3C42C467E1F005411CA /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8E843F7A2C49D09900684E7B /* EmptyCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E843F792C49D09900684E7B /* EmptyCityViewController.swift */; };
 		8EA6052F2C3EA15900FC9EB9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA6052E2C3EA15900FC9EB9 /* Colors.swift */; };
 		8EA605342C3EAA0600FC9EB9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA605332C3EAA0600FC9EB9 /* AboutViewController.swift */; };
 		8EBEE00E2C408C4B007979F9 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBEE00D2C408C4B007979F9 /* SettingsTableViewCell.swift */; };
@@ -76,6 +77,7 @@
 		8E04E5BE2C3F0AFC00664BCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E04E5C02C3F0C6400664BCD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E4F070B2C47E922008168DA /* Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
+		8E843F792C49D09900684E7B /* EmptyCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCityViewController.swift; sourceTree = "<group>"; };
 		8EA6052E2C3EA15900FC9EB9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8EA605332C3EAA0600FC9EB9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		8EBEE00D2C408C4B007979F9 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				8EF139EA2C486DF70077E283 /* MainViewController.swift */,
 				8EF139EC2C4875680077E283 /* AddCityViewController.swift */,
 				8E03863C2C3D3288002BD3C1 /* CityViewController.swift */,
+				8E843F792C49D09900684E7B /* EmptyCityViewController.swift */,
 				8ED4F3CE2C469E8C005411CA /* Views */,
 				8EBEE00C2C408869007979F9 /* Settings */,
 				8EA605322C3EA9EB00FC9EB9 /* First App Launch */,
@@ -323,6 +326,7 @@
 				8EF139EB2C486DF70077E283 /* MainViewController.swift in Sources */,
 				8E0386412C3D35BC002BD3C1 /* Fonts.swift in Sources */,
 				8EF139FF2C49480F0077E283 /* UIViewController.swift in Sources */,
+				8E843F7A2C49D09900684E7B /* EmptyCityViewController.swift in Sources */,
 				8EA6052F2C3EA15900FC9EB9 /* Colors.swift in Sources */,
 				8EF139EF2C491F100077E283 /* CLLocation.swift in Sources */,
 				8EBEE00E2C408C4B007979F9 /* SettingsTableViewCell.swift in Sources */,

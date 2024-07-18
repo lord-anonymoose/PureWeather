@@ -30,6 +30,8 @@ class AddCityViewController: UIViewController {
         }
     }
     
+    
+    
     // MARK: - Subviews
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -90,6 +92,7 @@ class AddCityViewController: UIViewController {
     }()
     
     
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,6 +140,7 @@ class AddCityViewController: UIViewController {
     @objc func keyboardWillHide(_ notification: Notification) {
         scrollView.contentInset = .zero
     }
+    
     
     
     // MARK: - Private
@@ -233,6 +237,8 @@ class AddCityViewController: UIViewController {
     }
 }
 
+
+
 extension AddCityViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         if pinIsShown {
@@ -249,6 +255,7 @@ extension AddCityViewController: MKMapViewDelegate {
         }
     }
 }
+
 
 
 extension AddCityViewController: UITextFieldDelegate {
@@ -272,6 +279,7 @@ extension AddCityViewController: UITextFieldDelegate {
 }
 
 
+
 extension AddCityViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse || status == .authorizedAlways {
@@ -282,10 +290,17 @@ extension AddCityViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             mapView.centerMapOnLocation(location)
+            location.getCityName { cityName in
+                if let location = cityName {
+                    self.textField.text = location
+                } else {
+                    self.textField.text = ""
+                }
+            }
             locationManager.stopUpdatingLocation()
         }
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to find user's location: \(error.localizedDescription)")
     }
