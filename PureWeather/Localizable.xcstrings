@@ -505,6 +505,7 @@
       }
     },
     "Show location" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {

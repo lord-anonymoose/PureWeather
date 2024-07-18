@@ -21,7 +21,13 @@ extension MKMapView {
     func addAnnotationAtLocation(_ location: CLLocation) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = location.coordinate
-        annotation.title = "City"
+        location.getCityName { cityName in
+            if let location = cityName {
+                annotation.title = location
+            } else {
+                annotation.title = ""
+            }
+        }
         annotation.subtitle = "Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)"
         self.addAnnotation(annotation)
     }

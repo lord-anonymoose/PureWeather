@@ -21,6 +21,7 @@
 		8E04E5BA2C3F011E00664BCD /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E04E5B92C3F011E00664BCD /* Buttons.swift */; };
 		8E04E5BF2C3F0AFC00664BCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E04E5BD2C3F0AFC00664BCD /* InfoPlist.strings */; };
 		8E4F070C2C47E922008168DA /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F070B2C47E922008168DA /* Foundation.swift */; };
+		8E843F772C49CD0D00684E7B /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4F3C42C467E1F005411CA /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8EA6052F2C3EA15900FC9EB9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA6052E2C3EA15900FC9EB9 /* Colors.swift */; };
 		8EA605342C3EAA0600FC9EB9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA605332C3EAA0600FC9EB9 /* AboutViewController.swift */; };
 		8EBEE00E2C408C4B007979F9 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBEE00D2C408C4B007979F9 /* SettingsTableViewCell.swift */; };
@@ -42,6 +43,20 @@
 		8EF13A042C494FA40077E283 /* UITextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF13A032C494FA40077E283 /* UITextFieldWithPadding.swift */; };
 		8EF13A062C4959B20077E283 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF13A052C4959B20077E283 /* MKMapView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8E843F782C49CD0D00684E7B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8E843F772C49CD0D00684E7B /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8E03861F2C3D2EC8002BD3C1 /* PureWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PureWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +250,7 @@
 				8E03861B2C3D2EC8002BD3C1 /* Sources */,
 				8E03861C2C3D2EC8002BD3C1 /* Frameworks */,
 				8E03861D2C3D2EC8002BD3C1 /* Resources */,
+				8E843F782C49CD0D00684E7B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
