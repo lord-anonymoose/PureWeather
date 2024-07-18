@@ -30,13 +30,3 @@ extension Double {
         return result
     }
 }
-
-/*
-func formatTemperature(_ temperature: Double) -> String {
-    let formatter = NumberFormatter()
-    formatter.numberStyle = .decimal
-    formatter.maximumFractionDigits = 1 // Set this to the desired precision
-    
-    return formatter.string(from: NSNumber(value: temperature)) ?? "\(temperature)"
-}
-*/

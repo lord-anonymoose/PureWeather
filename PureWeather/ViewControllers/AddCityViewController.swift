@@ -14,6 +14,21 @@ import MapKit
 class AddCityViewController: UIViewController {
     
     let locationManager = CLLocationManager()
+    var pinIsShown: Bool = false {
+        didSet {
+            if pinIsShown {
+                let configuration = UIImage.SymbolConfiguration(pointSize: 50, weight: .bold, scale: .large)
+                let image = UIImage(systemName: "mappin.slash.circle.fill")?.withTintColor(.systemOrange, renderingMode: .alwaysOriginal).applyingSymbolConfiguration(configuration)
+                showPinButton.setImage(image, for: .normal)
+                pinImageView.isHidden = false
+            } else {
+                let configuration = UIImage.SymbolConfiguration(pointSize: 50, weight: .bold, scale: .large)
+                let image = UIImage(systemName: "mappin.circle.fill")?.withTintColor(.systemOrange, renderingMode: .alwaysOriginal).applyingSymbolConfiguration(configuration)
+                showPinButton.setImage(image, for: .normal)
+                pinImageView.isHidden = true
+            }
+        }
+    }
     
     // MARK: - Subviews
     private lazy var scrollView: UIScrollView = {
@@ -36,6 +51,31 @@ class AddCityViewController: UIViewController {
         let mapView = MKMapView()
         mapView.translatesAutoresizingMaskIntoConstraints = false
         return mapView
+    }()
+    
+    private lazy var showPinButton: UIButton = {
+        let button = UIButton()
+        let configuration = UIImage.SymbolConfiguration(pointSize: 50, weight: .bold, scale: .large)
+        let image = UIImage(systemName: "mappin.circle.fill")?.withTintColor(.systemOrange, renderingMode: .alwaysOriginal).applyingSymbolConfiguration(configuration)
+        button.setImage(image, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 25
+        button.contentMode = .scaleToFill
+        button.addTarget(self, action: #selector(showPinButtonTapped), for: .touchUpInside)
+        button.isUserInteractionEnabled = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private lazy var pinImageView: UIImageView = {
+        let sizeConfiguration = UIImage.SymbolConfiguration(pointSize: 50, weight: .bold, scale: .large)
+        let colorConfiguration = UIImage.SymbolConfiguration(paletteColors: [.systemRed, .systemBlue])
+        let image = UIImage(systemName: "mappin.and.ellipse")?.applyingSymbolConfiguration(sizeConfiguration)?.applyingSymbolConfiguration(colorConfiguration)
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.isHidden = true
+        return imageView
     }()
     
     private lazy var showLocationButton: UIButton = {
@@ -70,6 +110,7 @@ class AddCityViewController: UIViewController {
         setupUI()
         addSubviews()
         setupConstraints()
+        mapView.delegate = self
     }
     
     
@@ -100,6 +141,11 @@ class AddCityViewController: UIViewController {
             }
         }
     }
+    
+    @objc func showPinButtonTapped(_ button: UIButton) {
+        self.pinIsShown.toggle()
+        print("showPinButtonTapped")
+    }
 
     
     
@@ -112,6 +158,8 @@ class AddCityViewController: UIViewController {
     private func addSubviews() {
         view.addSubview(scrollView)
         scrollView.addSubview(mapView)
+        mapView.addSubview(showPinButton)
+        mapView.addSubview(pinImageView)
         scrollView.addSubview(textField)
         scrollView.addSubview(showLocationButton)
         scrollView.addSubview(saveLocationButton)
@@ -137,6 +185,20 @@ class AddCityViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
+            showPinButton.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -10),
+            showPinButton.heightAnchor.constraint(equalToConstant: 50),
+            showPinButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10),
+            showPinButton.widthAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        NSLayoutConstraint.activate([
+            pinImageView.bottomAnchor.constraint(equalTo: mapView.centerYAnchor),
+            pinImageView.centerXAnchor.constraint(equalTo: mapView.centerXAnchor),
+            pinImageView.heightAnchor.constraint(equalToConstant: 50),
+            pinImageView.widthAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 25),
             textField.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 25),
             textField.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -25),
@@ -155,9 +217,26 @@ class AddCityViewController: UIViewController {
             saveLocationButton.bottomAnchor.constraint(equalTo: showLocationButton.bottomAnchor),
             saveLocationButton.leadingAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 12.5),
             saveLocationButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -25),
-            //saveLocationButton.heightAnchor.constraint(equalToConstant: 50),
-            saveLocationButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor) // Adding bottom constraint to scroll view's bottom
-
+            saveLocationButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
         ])
+    }
+}
+
+extension AddCityViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        if pinIsShown {
+            let center = mapView.centerCoordinate
+            
+            let centerCoordinate = mapView.centerCoordinate
+            let centerLocation = CLLocation(latitude: centerCoordinate.latitude, longitude: centerCoordinate.longitude)
+            
+            centerLocation.getCityName { cityName in
+                if let location = cityName {
+                    self.textField.text = location
+                } else {
+                    self.textField.text = ""
+                }
+            }
+        }
     }
 }
