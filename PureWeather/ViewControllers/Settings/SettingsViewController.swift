@@ -20,6 +20,15 @@ class SettingsViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var clearCitiesButton: UIButton = {
+        let button = UIButton()
+        let ittle = String(localized: "Clear city data")
+        button.addTarget(self, action: #selector(clearCitiesButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .secondarySystemFill
+        return button
+    }()
+    
     private lazy var aboutDeveloperButton: UIButton = {
         let button = UIButton()
         let title = String(localized: "About Developer")
@@ -57,6 +66,9 @@ class SettingsViewController: UIViewController {
         self.navigationController?.pushViewController(aboutViewController, animated: true)
     }
     
+    @objc func clearCitiesButtonTapped(_ button: UIButton) {
+        print("clearCitiesButtonTapped")
+    }
     
     // MARK: - Private
     private func setupUI() {
@@ -75,6 +87,7 @@ class SettingsViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(settingsTableView)
+        view.addSubview(clearCitiesButton)
         view.addSubview(aboutDeveloperButton)
     }
     
@@ -87,8 +100,16 @@ class SettingsViewController: UIViewController {
             settingsTableView.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor),
             settingsTableView.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor)
         ])
+        
         NSLayoutConstraint.activate([
-            aboutDeveloperButton.topAnchor.constraint(equalTo: settingsTableView.bottomAnchor, constant: 15),
+            clearCitiesButton.topAnchor.constraint(equalTo: settingsTableView.bottomAnchor, constant: 25),
+            clearCitiesButton.heightAnchor.constraint(equalToConstant: 50),
+            clearCitiesButton.leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: 25),
+            clearCitiesButton.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -25),
+        ])
+        
+        NSLayoutConstraint.activate([
+            aboutDeveloperButton.topAnchor.constraint(equalTo: settingsTableView.bottomAnchor, constant: 25),
             aboutDeveloperButton.heightAnchor.constraint(equalToConstant: 25),
             aboutDeveloperButton.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor),
         ])

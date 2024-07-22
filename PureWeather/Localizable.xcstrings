@@ -151,6 +151,9 @@
         }
       }
     },
+    "Clear city data" : {
+
+    },
     "Cloudy" : {
       "localizations" : {
         "ru" : {
@@ -352,6 +355,9 @@
           }
         }
       }
+    },
+    "Location saved" : {
+
     },
     "m/s" : {
       "localizations" : {

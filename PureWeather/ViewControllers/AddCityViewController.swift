@@ -17,11 +17,13 @@ class AddCityViewController: UIViewController {
     var pinIsShown: Bool = false {
         didSet {
             if pinIsShown {
+                self.textField.isEnabled = false
                 let configuration = UIImage.SymbolConfiguration(pointSize: 50, weight: .bold, scale: .large)
                 let image = UIImage(systemName: "mappin.slash.circle.fill")?.withTintColor(.systemOrange, renderingMode: .alwaysOriginal).applyingSymbolConfiguration(configuration)
                 showPinButton.setImage(image, for: .normal)
                 pinImageView.isHidden = false
             } else {
+                self.textField.isEnabled = true
                 let configuration = UIImage.SymbolConfiguration(pointSize: 50, weight: .bold, scale: .large)
                 let image = UIImage(systemName: "mappin.circle.fill")?.withTintColor(.systemOrange, renderingMode: .alwaysOriginal).applyingSymbolConfiguration(configuration)
                 showPinButton.setImage(image, for: .normal)
@@ -30,13 +32,23 @@ class AddCityViewController: UIViewController {
         }
     }
     
-    
+    private var notificationLabelBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Subviews
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
+    }()
+    
+    private lazy var notificationLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .secondarySystemFill
+        label.textAlignment = .center
+        label.layer.cornerRadius = 15.0
+        label.clipsToBounds = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private lazy var textField: UITextFieldWithPadding = {
@@ -116,6 +128,10 @@ class AddCityViewController: UIViewController {
         getLocation(from: textField.text ?? "") { location in
             if let location = location {
                 StorageService.shared().postLocation(location: location)
+                let text = String(localized: "Location saved")
+                self.showNotificationLabel(text: text)
+                self.mapView.centerMapOnLocation(location)
+                self.mapView.addAnnotationAtLocation(location)
                 print("location posted")
             } else {
                 let title = String(localized: "Error!")
@@ -184,6 +200,7 @@ class AddCityViewController: UIViewController {
         mapView.addSubview(pinImageView)
         scrollView.addSubview(textField)
         scrollView.addSubview(saveLocationButton)
+        view.addSubview(notificationLabel)
     }
     
     private func setupConstraints() {
@@ -226,7 +243,6 @@ class AddCityViewController: UIViewController {
             textField.heightAnchor.constraint(equalToConstant: 50),
         ])
         
-        
         NSLayoutConstraint.activate([
             saveLocationButton.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 25),
             saveLocationButton.heightAnchor.constraint(equalToConstant: 50),
@@ -234,6 +250,34 @@ class AddCityViewController: UIViewController {
             saveLocationButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -25),
             saveLocationButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
         ])
+        
+        notificationLabelBottomConstraint = notificationLabel.bottomAnchor.constraint(equalTo: safeAreaGuide.topAnchor, constant: -100)
+        
+        notificationLabelBottomConstraint.isActive = true
+        NSLayoutConstraint.activate([
+            notificationLabel.heightAnchor.constraint(equalToConstant: 35),
+            notificationLabel.centerXAnchor.constraint(equalTo: safeAreaGuide.centerXAnchor),
+            notificationLabel.widthAnchor.constraint(equalToConstant: 200)
+        ])
+    }
+    
+    func showNotificationLabel(text: String = "") {
+        notificationLabel.isHidden = false
+        notificationLabelBottomConstraint.constant = 0
+        notificationLabel.text = text
+        UIView.animate(withDuration: 1, animations: {
+            self.view.layoutIfNeeded()
+            self.notificationLabel.layer.cornerRadius = 10.0
+        }) { _ in
+            UIView.animate(withDuration: 1, delay: 2, animations: {
+                self.notificationLabel.alpha = 0
+            }, completion: { _ in
+                self.notificationLabel.isHidden = true
+                self.notificationLabel.alpha = 1
+                self.notificationLabelBottomConstraint.constant = -100
+                self.view.layoutIfNeeded()
+            })
+        }
     }
 }
 
