@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  PureWeather
+
+  Created by Philipp Lazarev on 10.07.2024.
+  
+*/
+
+"NSLocationAlwaysAndWhenInUseUsageDescription"="Доступ к геопозиции даст возможность автоматически определать погоду там, где Вы находитесь.";
+"NSLocationWhenInUseUsageDescription"="Доступ к геопозиции даст возможность автоматически определать погоду там, где Вы находитесь.";

@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  PureWeather
+
+  Created by Philipp Lazarev on 10.07.2024.
+  
+*/
+
+"NSLocationAlwaysAndWhenInUseUsageDescription"="Location access would allow us providing you with weather for your current location.";
+"NSLocationWhenInUseUsageDescription"="Location access would allow us providing you with weather for your current location.";

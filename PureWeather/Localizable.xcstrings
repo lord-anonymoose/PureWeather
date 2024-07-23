@@ -1,0 +1,726 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "12h" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "12ч"
+          }
+        }
+      }
+    },
+    "24h" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "24ч"
+          }
+        }
+      }
+    },
+    "A 25 years old iOS Developer currently living in Moscow, Russia.\n\nHuge fan of:\n🌎 Travelling and meeting new people\n🍏 Apple products\n⚽️ FC Bayern München\n🎵 Ed Sheeran & OneRepublic\n\nI deeply believe that software and technologies can change this world for the better!" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мне 25 и я iOS-разработчик из Москвы.\n\nБольшой фанат:\n🌍 Путешествий и знакомств с новыми людьми\n🍏 Продуктов Apple\n⚽️ Баварии Мюнхен\n🎵 Эда Ширана и OneRepublic\n\nА ещё я искренне верю, что технологии могут изменить этот мир к лучшему!"
+          }
+        }
+      }
+    },
+    "About developer" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "О разработчике"
+          }
+        }
+      }
+    },
+    "About Developer" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "О разработчике"
+          }
+        }
+      }
+    },
+    "Allow location access" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Предоставить доступ к геопозиции"
+          }
+        }
+      }
+    },
+    "Blizzard" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Метель"
+          }
+        }
+      }
+    },
+    "Blowing Dust" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пыльная буря"
+          }
+        }
+      }
+    },
+    "Blowing Snow" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пурга"
+          }
+        }
+      }
+    },
+    "Breezy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Легкий ветер"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отмена"
+          }
+        }
+      }
+    },
+    "Choose location manually" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбирать вручную"
+          }
+        }
+      }
+    },
+    "Cities are yet to be added" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Необходимо добавить города"
+          }
+        }
+      }
+    },
+    "City name..." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Название города..."
+          }
+        }
+      }
+    },
+    "Clear" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ясно"
+          }
+        }
+      }
+    },
+    "Clear city data" : {
+
+    },
+    "Cloudy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Облачно"
+          }
+        }
+      }
+    },
+    "Could not find a city with a name you have provided!" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Город с введенным именем не найден!"
+          }
+        }
+      }
+    },
+    "Drizzle" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мелкий дождь"
+          }
+        }
+      }
+    },
+    "email copied" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Почта скопирована"
+          }
+        }
+      }
+    },
+    "Error!" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка!"
+          }
+        }
+      }
+    },
+    "Flurries" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кратковременные снегопады"
+          }
+        }
+      }
+    },
+    "Foggy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Туман"
+          }
+        }
+      }
+    },
+    "Freezing Drizzle" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ледяной моросящий дождь"
+          }
+        }
+      }
+    },
+    "Freezing Rain" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ледяной дождь"
+          }
+        }
+      }
+    },
+    "Frigid" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Морозно"
+          }
+        }
+      }
+    },
+    "Hail" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Град"
+          }
+        }
+      }
+    },
+    "Haze" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дымка"
+          }
+        }
+      }
+    },
+    "Heavy Rain" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сильный дождь"
+          }
+        }
+      }
+    },
+    "Heavy Snow" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сильный снег"
+          }
+        }
+      }
+    },
+    "Hello!" : {
+      "comment" : "Onboarding welcome!",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Привет!"
+          }
+        }
+      }
+    },
+    "Hot" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жара"
+          }
+        }
+      }
+    },
+    "Hurricane" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ураган"
+          }
+        }
+      }
+    },
+    "Isolated Thunderstorms" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Локальные грозы"
+          }
+        }
+      }
+    },
+    "Let's go!" : {
+      "comment" : "Let's go button for OnboardingViewController",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поехали!"
+          }
+        }
+      }
+    },
+    "link copied" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ссылка скопирована"
+          }
+        }
+      }
+    },
+    "Location saved" : {
+
+    },
+    "m/s" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "м/с"
+          }
+        }
+      }
+    },
+    "mi/s" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ми/с"
+          }
+        }
+      }
+    },
+    "Mostly Clear" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Преимущественно ясно"
+          }
+        }
+      }
+    },
+    "Mostly Cloudy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Преимущественно облачно"
+          }
+        }
+      }
+    },
+    "Notice" : {
+      "comment" : "Alert title when declining location access",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Внимание"
+          }
+        }
+      }
+    },
+    "Notifications" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уведомления"
+          }
+        }
+      }
+    },
+    "Off" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выкл"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ОК"
+          }
+        }
+      }
+    },
+    "On" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вкл"
+          }
+        }
+      }
+    },
+    "Partly Cloudy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переменная облачность"
+          }
+        }
+      }
+    },
+    "Philipp Lazarev" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Филипп Лазарев"
+          }
+        }
+      }
+    },
+    "PureWeather on GitHub" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PureWeather на GitHub"
+          }
+        }
+      }
+    },
+    "Rain" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дождь"
+          }
+        }
+      }
+    },
+    "Save Location" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранить локацию"
+          }
+        }
+      }
+    },
+    "Scattered Thunderstroms" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Местами грозы"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Настройки"
+          }
+        }
+      }
+    },
+    "Show location" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Город на карте"
+          }
+        }
+      }
+    },
+    "Sleet" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мокрый снег"
+          }
+        }
+      }
+    },
+    "Smoky" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дым"
+          }
+        }
+      }
+    },
+    "Snow" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Снег"
+          }
+        }
+      }
+    },
+    "Strong Stroms" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сильные штормы"
+          }
+        }
+      }
+    },
+    "Sun Flurries" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Солнце и снег"
+          }
+        }
+      }
+    },
+    "Sun Showers" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Солнце и дождь"
+          }
+        }
+      }
+    },
+    "Temperature" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Температура"
+          }
+        }
+      }
+    },
+    "Thank you for choosing PureWeather - minimalistic weather app. \n\nWe appreciate your time and only provide you data that you truly need. And if you need more detailed weather forecast - it's just a swipe away!" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спасибо за то, что выбрали PureWeather!\n\nМы ценим Ваше время и предоставляем только нужную информацию. А для более детального прогноза просто проведите пальцем!"
+          }
+        }
+      }
+    },
+    "This application is not available for devices with Jailbreak. We strongly condemn hacking iOS and installation of illegal software!" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Это приложение недоступно для устройств с Джейлбрейком. Мы осуждаем взлом iOS и установку нелегального ПО!"
+          }
+        }
+      }
+    },
+    "Thunderstorms" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Гроза"
+          }
+        }
+      }
+    },
+    "Time Format" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Формат времени"
+          }
+        }
+      }
+    },
+    "Tropical Strom" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тропический шторм"
+          }
+        }
+      }
+    },
+    "Unknown Weather Condition" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неизвестные погодные условия"
+          }
+        }
+      }
+    },
+    "We truly care about your privacy! That is why our app is built using Apple WeatherKit framework - which never stoles or sells your data. Moreover, PureWeather app is open-source and you can always find its source code on GitHub.\n\nYour location is used to provide you weather data. If you do not want to share your location, you can add cities manually." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мы очень дорожим Вашей приватностью! Именно поэтому приложение использует фреймворк WeatherKit от Apple, который обеспечивает максимальную защищенность Ваших данных. Кроме того, приложение PureWeather имеет открытый исходный код, который Вы всегда сможете посмотреть на GitHub. \n\nВаша геопозиция используется только для предоставления данных о погоде. Если Вы не желаете делится своим месторасположением, то в приложении также можно добавлять локации вручную."
+          }
+        }
+      }
+    },
+    "Wind Speed" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скорость ветра"
+          }
+        }
+      }
+    },
+    "Windy" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ветрено"
+          }
+        }
+      }
+    },
+    "Wintry Mix" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мокрый снег с дождем"
+          }
+        }
+      }
+    },
+    "You will not be able to set location automatically. It can be changed later in settings." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автоматическая установка геопозиции будет невозможно. Предоставить доступ к геопозиции можно будет позже в настройках."
+          }
+        }
+      }
+    },
+    "Your device is not configured to send emails. Try to send it manually." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "На Вашем устройстве не настроена почта. Попробуйте отправить сообщение вручную."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
